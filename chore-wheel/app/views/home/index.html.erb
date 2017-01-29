@@ -1,6 +1,7 @@
 <% if user_signed_in? %>
 <h1> Home page be like whattttt</h1>
 <%= link_to 'View Chore List', chores_path %>
+<%= link_to 'User Profile',users_path %>
 <% else %>
 <%= link_to 'Log in', user_session_path %>
 <% end %>

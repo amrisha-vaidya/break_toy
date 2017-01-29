@@ -1,0 +1,17 @@
+<%= form_for [@chore] do |f|  %>
+
+<div class="field">
+  <%= f.label :title, 'Chore Title' %><br />
+  <%= f.text_field :title, autofocus: true %>
+</div>
+
+<div class="field">
+  <%= f.label :description, 'Chore description' %><br />
+  <%= f.text_field :description %>
+</div>
+
+<div>
+  <%= f.submit(value='Add Chore') %>
+</div>
+
+<% end %>

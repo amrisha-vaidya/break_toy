@@ -6,7 +6,14 @@ Rails.application.routes.draw do
 
   root to: "home#index"
 
+  resources :dashboard, only: [:index]
+  resources :homepage, only: [:index]
+
   resources :chores
+
+  resources :users do
+    resources :tasks
+  end
 
 
 end
