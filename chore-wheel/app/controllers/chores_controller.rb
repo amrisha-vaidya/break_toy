@@ -1,11 +1,12 @@
 class ChoresController< ApplicationController
   def index
-    @chore = Chore.all
+    @chores = Chore.all
   end
 
   def new
     if user_signed_in?
       @chore = Chore.new
+
     else
       flash[:notice] = "Please Sign in to add a chore"
       redirect_to new_user_session_path
@@ -18,6 +19,9 @@ class ChoresController< ApplicationController
       @chore.created_at = Time.now
       @chore.updated_at = Time.now
       # does this also create updated_at and created_at
+      @chore.save
+      flash[:notice] = "Chore saved successfully"
+      redirect_to :chores
     else
       flash[:notice]="Please Sign in to create a chore"
       redirect_to new_user_session_path

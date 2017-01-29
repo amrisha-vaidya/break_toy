@@ -3,7 +3,7 @@ class HomeController< ApplicationController
     if user_signed_in?
       redirect_to :dashboard_index
     else
-      redirect_to :homepage_index
+      return :index
     end
   end
 
