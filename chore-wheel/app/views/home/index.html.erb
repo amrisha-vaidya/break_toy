@@ -1,1 +1,5 @@
+<% if user_signed_in? %>
 <h1> Home page be like whattttt</h1>
+<% else %>
+<%= link_to 'Log in', user_session_path %>
+<% end %>
