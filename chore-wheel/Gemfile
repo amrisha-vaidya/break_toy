@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'pry-rails', '~> 0.3.4'
 gem 'awesome_print', '~> 1.7'
+gem 'foundation-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
