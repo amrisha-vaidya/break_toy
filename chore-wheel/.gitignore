@@ -17,3 +17,7 @@
 .byebug_history
 .env
 .DS_Store
+/coverage
+.hound.yml
+.rubocop.yml
+.coveralls.yml

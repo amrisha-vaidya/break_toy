@@ -22,3 +22,8 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+![Build Status](https://codeship.com/projects/33cd3600-c7b2-0134-bde4-2ebb10e72540/status?branch=master)
+![Code Climate](https://codeclimate.com/github/amrisha-vaidya/break_toy.png)
+![Coverage Status](https://coveralls.io/repos/amrisha-vaidya/break_toy/badge.png)
