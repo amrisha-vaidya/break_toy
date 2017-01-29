@@ -33,6 +33,8 @@ gem 'devise'
 gem 'pry-rails', '~> 0.3.4'
 gem 'awesome_print', '~> 1.7'
 gem 'foundation-rails'
+gem 'twilio-ruby'
+gem 'dotenv-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
