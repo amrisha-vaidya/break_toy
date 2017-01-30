@@ -1,26 +1,48 @@
-<h2>Log in</h2>
-
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+<div class="row">
+  <div class="large-6 columns">
+      <div class="login-panel">
+        <p class="log_in">Log in to the ChoreStore!</p>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+        <div class="row collapse">
+          <div class="small-2 columns">
+            <span class="prefix"><i class="fi-torso-female"></i></span>
+          </div>
+          <div class="small-10 columns">
+            <%= f.email_field :email, placeholder: "Email", autofocus: true %> <br />
+          </div>
+        </div>
 
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+        <div class="row collapse">
+          <div class="small-2 column s">
+            <span class="prefix"><i class="fi-torso-female"></i></span>
+          </div>
+          <div class="small-10 columns">
+            <%= f.password_field :password, placeholder: "Password", autofocus: true %> <br />
+          </div>
+        </div>
+
+        <div class="row collapse">
+          <div class="small-2 columns">
+            <span class="prefix"><i class="fi-torso-female"></i></span>
+          </div>
+        <% if devise_mapping.rememberable? -%>
+          <div class="small-10 columns">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end %>
+
+        <div class="login_actions">
+          <%= f.submit "Log in" %>
+        </div>
+
+        <div class="shared_links">
+          <%= render "devise/shared/links" %>
+        </div>
+
     </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
+</div>
 
-<%= render "devise/shared/links" %>
+<% end %>
