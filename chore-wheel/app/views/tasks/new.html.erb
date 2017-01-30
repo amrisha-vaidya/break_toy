@@ -1,1 +1,20 @@
 <h2> Assign a Chore</h2>
+
+<%= form_for [@task] do |f|  %>
+
+<div class="field">
+  <%= f.label :finish_by, 'Finish task by: ' %><br />
+  <%= f.date_field :finish_by %>
+</div>
+
+<%= f.label :chores_id, 'Select Chore to Assign:' %> <br />
+<%= f.select :chores_id,  @chores.map {|c| [c.title,c.id]} %>
+
+<%= f.label :users_id, 'Assign Chore to:' %> <br />
+<%= f.select :users_id,  @users.map {|u| [u.first_name, u.last_name, u.id]} %>
+
+<div>
+  <%= f.submit(value='Add Chore') %>
+</div>
+
+<% end %>
