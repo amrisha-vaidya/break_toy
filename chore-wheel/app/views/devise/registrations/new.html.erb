@@ -6,32 +6,22 @@
           <%= devise_error_messages! %>
         <div class="row collapse">
           <div class="small-2 columns">
-            <span class="prefix"><i class="fi-torso-female"></i></span>
           </div>
           <div class="small-10 columns">
             <%= f.text_field :first_name, placeholder: "First Name", autofocus: true %> <br />
           </div>
         </div>
         <div class="row collapse">
-          <div class="small-2 columns">
-            <span class="prefix"><i class="fi-torso-female"></i></span>
-          </div>
           <div class="small-10 columns">
             <%= f.text_field :last_name, placeholder: "Last Name" %> <br />
           </div>
         </div>
         <div class="row collapse">
-          <div class="small-2 columns">
-            <span class="prefix"><i class="fi-torso-female"></i></span>
-          </div>
           <div class="small-10 columns">
               <%= f.email_field :email, placeholder: "Email" %> <br />
           </div>
           </div>
           <div class="row collapse">
-            <div class="small-2 columns">
-              <span class="prefix"><i class="fi-torso-female"></i></span>
-            </div>
             <div class="small-10 columns">
               <% if @minimum_password_length %>
               <em>(<%= @minimum_password_length %> characters minimum)</em>
@@ -40,9 +30,6 @@
             </div>
           </div>
           <div class="row collapse">
-            <div class="small-2 columns">
-              <span class="prefix"><i class="fi-torso-female"></i></span>
-            </div>
             <div class="small-10 columns">
               <%= f.password_field :password_confirmation, placeholder: "Password confirmation", autocomplete: "off" %>
             </div>
