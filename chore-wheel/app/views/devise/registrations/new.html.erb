@@ -1,10 +1,9 @@
 <div class="row">
   <div class="large-6 columns">
-    <div class="signup-panel">
-      <p class="Hello">Hello! Welcome to the ChoreStore</p>
+      <div class="signup-panel">
+        <p class="welcome">Hello! Welcome to the ChoreStore</p>
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= devise_error_messages! %>
-
         <div class="row collapse">
           <div class="small-2 columns">
             <span class="prefix"><i class="fi-torso-female"></i></span>
@@ -52,10 +51,13 @@
           <div class="actions">
             <%= f.submit "Sign up" %>
           </div>
+
+          <div class="login"
+          <p> Already have an account? <%= render "devise/shared/links" %> </p>
+          </div>
   <% end %>
 
 
-  <p> Already have an account? <%= render "devise/shared/links" %> </p>
     </div>
   </div>
 <div>

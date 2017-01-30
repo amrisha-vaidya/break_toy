@@ -619,3 +619,36 @@ $topbar-title-spacing: 0.5rem 1rem 0.5rem 0;
 $topbar-input-width: 200px;
 $topbar-unstack-breakpoint: medium;
 
+.signup-panel{
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-top: 30px;
+  i{
+    font-size: 30px;
+    line-height: 50px;
+    color: #999;
+  }
+  form{
+    span{
+      height: 50px;
+    }
+  }
+}
+
+.welcome{
+  font-size: 26px;
+  text-align: center;
+  margin-left: 15%;
+}
+p{
+  font-size: 13px;
+  font-weight: 200;
+  margin-left: 45%
+}
+.actions{
+  margin-left: 45%;
+}
+.login{
+  margin-left: 30%;
+}
