@@ -3,23 +3,37 @@ class Users::RegistrationsController < Devise::RegistrationsController
 # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  def new
-    super
-  end
+  # def new
+  #   super
+  # end
 
   # POST /resource
-  def create
-    super
-  end
+  # def create
+  #   super
+  # end
 
   # GET /resource/edit
-  def edit
-    super
-  end
+  # def edit
+  #   super
+  # end
 
   # PUT /resource
-  def update
-    super
+  # def update
+  #   super
+  # end
+
+  def after_sign_up_path_for(resource)
+    @user = User.find(resource.id)
+    if @user.phone_number == nil
+      edit_user_registration_url(current_user)
+      # flash[:notice] = "Please Edit your Profile to add your phone number, all alerts and reminders will be sent to your phone!!"
+
+      # this route
+      # dashboard_index_url
+    else
+      # that route
+      super
+    end
   end
 
   # DELETE /resource
@@ -43,6 +57,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     devise_parameter_sanitizer.permit(:sign_up, keys: [
       :first_name,
       :last_name,
+      :phone_number,
       :email,
       :password
       ])
