@@ -639,7 +639,7 @@ $topbar-unstack-breakpoint: medium;
 .welcome{
   font-size: 26px;
   text-align: center;
-  margin-left: 15%;
+  // margin-left: 0;
 }
 p{
   font-size: 13px;
@@ -669,13 +669,12 @@ p{
 
 .log_in{
   font-size: 26px;
-  text-align: center;
-  margin-left: 15%;
+  margin-left: 23%;
 }
 .login_actions{
-  margin-left: 30%;
+  margin-left: 40%;
 }
 
 .shared_links{
-  margin-left: 30%;
+  margin-left: 40%;
 }

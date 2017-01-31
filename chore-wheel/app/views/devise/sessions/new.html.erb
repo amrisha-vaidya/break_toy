@@ -1,33 +1,24 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 <div class="row">
-  <div class="large-6 columns">
+  <div class="large-offset-3 large-6 columns medium-offset-3 medium-6 columns">
       <div class="login-panel">
         <p class="log_in">Log in to the ChoreStore!</p>
 
         <div class="row collapse">
-          <div class="small-2 columns">
-            <span class="prefix"><i class="fi-torso-female"></i></span>
-          </div>
-          <div class="small-10 columns">
+          <div class="small-10 small-centered columns">
             <%= f.email_field :email, placeholder: "Email", autofocus: true %> <br />
           </div>
         </div>
 
         <div class="row collapse">
-          <div class="small-2 column s">
-            <span class="prefix"><i class="fi-torso-female"></i></span>
-          </div>
-          <div class="small-10 columns">
+          <div class="small-10 small-centered columns">
             <%= f.password_field :password, placeholder: "Password", autofocus: true %> <br />
           </div>
         </div>
 
         <div class="row collapse">
-          <div class="small-2 columns">
-            <span class="prefix"><i class="fi-torso-female"></i></span>
-          </div>
         <% if devise_mapping.rememberable? -%>
-          <div class="small-10 columns">
+          <div class="small-10 small-centered columns">
             <%= f.check_box :remember_me %>
             <%= f.label :remember_me %>
           </div>
