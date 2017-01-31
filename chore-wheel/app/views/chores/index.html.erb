@@ -1,0 +1,13 @@
+<h1>Chore List Shows Here </h1>
+<ul>
+
+<% @chores.each do |chore| %>
+  <li><%= chore.title %></li>
+  <%= chore.description %>
+<% end %>
+
+<ul>
+
+
+<%= link_to 'Add Chore', new_chore_path %>
+<%= link_to 'Assign a Task', new_task_path %>

@@ -4,11 +4,12 @@
     <title>ChoreWheel</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
+    <%= render 'shared/dashboard' %>
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
     <% end %>
