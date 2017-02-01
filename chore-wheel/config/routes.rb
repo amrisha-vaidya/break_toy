@@ -21,5 +21,7 @@ Rails.application.routes.draw do
 
   resources :tasks
 
+  resources :profiles, only: [:show]
+
 
 end

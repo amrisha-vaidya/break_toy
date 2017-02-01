@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :tasks
-
+  has_one :profile
   mount_uploader :avatar, AvatarUploader
 end
