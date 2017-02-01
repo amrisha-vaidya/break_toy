@@ -7,13 +7,16 @@
 <div class="top-left-bar" id="main-menu">
   <div class="top-bar-left">
     <ul class="dropdown menu" data-dropdown-menu>
-      <li class="menu-text">Chore Store</li>
+      <strong><%= link_to 'ChoreStore', root_path %></strong>
     </ul>
   </div>
   <div class="top-bar align">
     <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
-        <li> Profile</li>
-        <li> Sign Out</li>
+      <li><% if user_signed_in? %>
+        Logged in as <strong><%= link_to current_user.first_name, profile_path(current_user) %></strong>
+      <% end %>
+      </li>
+      <li> Sign Out</li>
     </ul>
   </div>
 </div>
