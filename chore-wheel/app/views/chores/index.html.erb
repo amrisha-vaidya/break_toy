@@ -1,13 +1,41 @@
-<h1>Chore List Shows Here </h1>
-<ul>
+<div class="row">
+  <div class="large-offset-2 large-8 large-centered columns">
+    <p class='chore-list'><h3>Chores </h3></p>
+  </div>
+</div>
 
-<% @chores.each do |chore| %>
-  <li><%= chore.title %></li>
-  <%= chore.description %>
-<% end %>
+<!-- <div class="row">
+  <div class="large-12 large-centered columns">
+    <div class="row collapse">
+      <div class="medium 6 columns">
+        <% @chores.each do|chore| %>
+          <%= chore.title %>
+              <%= chore.description %>
+            <% end %>
+      </div>
+    </div>
+  </div>
+</div> -->
 
-<ul>
 
+<div class="row">
+  <div class=" large-8 columns">
+    <% if @chores ==[] %>
+      <h2> There are no chores!</h2>
+    <% else %>
+      <ul>
+      <% @chores.each do |chore| %>
+        <li><%= chore.title %></li>
+        <%= chore.description %>
+        <%= button_to "Edit Chore", edit_chore_path(chore), method: :get %>
+        <%= button_to "Delete Chore", chore_path(chore), method: :delete, data: { confirm: "Are you sure? This action cannot be undone."} %> <br /><br />
+      <% end %>
+      <ul>
+    <% end %>
+  </div>
+</div>
 
-<%= link_to 'Add Chore', new_chore_path %>
-<%= link_to 'Assign a Task', new_task_path %>
+<div class="row">
+  <%= link_to 'Add Chore', new_chore_path %>
+  <%= link_to 'Assign a Task', new_task_path %>
+</div>

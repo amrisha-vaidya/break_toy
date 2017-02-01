@@ -6,7 +6,6 @@ class ChoresController< ApplicationController
   def new
     if user_signed_in?
       @chore = Chore.new
-
     else
       flash[:notice] = "Please Sign in to add a chore"
       redirect_to new_user_session_path
@@ -21,7 +20,7 @@ class ChoresController< ApplicationController
       # does this also create updated_at and created_at
       @chore.save
       flash[:notice] = "Chore saved successfully"
-      redirect_to :chores
+      redirect_to chores_path
     else
       flash[:notice]="Please Sign in to create a chore"
       redirect_to new_user_session_path
@@ -36,6 +35,19 @@ class ChoresController< ApplicationController
       redirect_to new_user_session_path
     end
   end
+
+  def destroy
+    if user_signed_in?
+      @chore=Chore.find(params[:id])
+      @chore.destroy
+      flash[:alert] = "You have deleted this chore"
+      redirect_to chores_path
+    else
+      flash[:notice] = "Please sign in to delete this chore"
+      redirect_to new_user_session_path
+    end
+  end
+
 
   private
 

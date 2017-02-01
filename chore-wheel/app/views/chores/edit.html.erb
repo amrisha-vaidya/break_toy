@@ -1,0 +1,16 @@
+<div class="row">
+  <h3>Edit Chore</h3>
+  <%= form_for(@chore) do |f| %>
+
+    <div>
+      <%= f.label :title %>
+      <%= f.text_field :title, placeholder: "Edit Title", autofocus: true %>
+    </div>
+
+    <div>
+      <%= f.label :description %>
+      <%= f.text_area :description, placeholder: "Edit Description", autofocus: true%>
+    </div>
+
+  <% end %>
+</div>

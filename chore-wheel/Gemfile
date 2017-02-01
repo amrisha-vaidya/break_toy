@@ -36,6 +36,7 @@ gem 'foundation-rails'
 gem 'twilio-ruby'
 gem 'omniauth-facebook'
 gem 'carrierwave', '~> 0.11.2'
+gem 'awesome_print', '~> 1.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
