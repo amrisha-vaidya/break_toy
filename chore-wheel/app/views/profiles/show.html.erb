@@ -1,3 +1,8 @@
-<h2> Profile Page </h2>
+
+<div class="row">
+  <h2> Profile Page </h2>
 
 <h3><%= @user.first_name %></h3>
+
+
+<%= link_to 'Edit Profile', edit_user_registration_path(@user) %>
