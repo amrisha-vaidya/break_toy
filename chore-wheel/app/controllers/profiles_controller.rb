@@ -3,7 +3,7 @@ class ProfilesController< ApplicationController
     if user_signed_in? && (User.find(params[:id]) == current_user)
       @user = User.find(params[:id])
     else
-      flas[:alert]= 'Please Sign in to view your profile'
+      flash[:alert]= 'Please Sign in to view your profile'
     end
   end
 

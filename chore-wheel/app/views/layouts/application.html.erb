@@ -9,7 +9,7 @@
   </head>
 
   <body>
-    <%= render 'shared/dashboard' %>
+    <%= render 'shared/navigation' unless current_page?(root_url || user_session_url) %>
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
     <% end %>

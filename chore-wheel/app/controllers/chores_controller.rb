@@ -1,6 +1,8 @@
 class ChoresController< ApplicationController
   def index
-    @chores = Chore.all
+    if user_signed_in?
+      @chores = Chore.where({is_enabled: true}).order('created_at DESC')
+    end
   end
 
   def new
@@ -39,7 +41,8 @@ class ChoresController< ApplicationController
   def destroy
     if user_signed_in?
       @chore=Chore.find(params[:id])
-      @chore.destroy
+      @chore.is_enabled = false
+      @chore.save
       flash[:alert] = "You have deleted this chore"
       redirect_to chores_path
     else

@@ -2,7 +2,6 @@
 <h1> Home page be like whattttt</h1>
 <%= link_to 'View Chore List', chores_path %>
 <%= link_to 'User Profile', profile_path, method: :get %>
-<%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
 <% else %>
 <%= link_to 'Log in', user_session_path %>
 <% end %>

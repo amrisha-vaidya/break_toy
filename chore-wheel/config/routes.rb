@@ -23,5 +23,8 @@ Rails.application.routes.draw do
 
   resources :profiles, only: [:show]
 
+  # before_filter :disable_nav, only: [:landing_page]
+
+
 
 end

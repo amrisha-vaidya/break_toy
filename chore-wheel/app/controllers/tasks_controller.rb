@@ -14,7 +14,9 @@ class TasksController< ApplicationController
 
   def create
     if user_signed_in?
-      @task = Task.create(task_params)
+      @task = Task.new(task_params)
+
+      # Need details to sent text message.
       @chore= Chore.find(params[:task][:chores_id])
       @user = User.find(params[:task][:users_id])
 
@@ -39,16 +41,18 @@ class TasksController< ApplicationController
     end
   end
 
-  # def destroy
-  #   assign task must be destroyed after completed? is true ->
-  #   send out text message for this? to all housemates?
-  # end
+  def destroy
+    if user_signed_in?
+    # assign task must be destroyed after completed? is true ->
+    # send out text message for this? to all housemates?
+  end
 
   private
 
   def task_params
     params.require(:task).permit(
       :finish_by,
+      :completed,
       :users_id,
       :chores_id
     )
