@@ -1,6 +1,8 @@
 class ChoresController< ApplicationController
   def index
-    @chores = Chore.where({is_enabled: true}).order('created_at DESC')
+    if user_signed_in?
+      @chores = Chore.where({is_enabled: true}).order('created_at DESC')
+    end
   end
 
   def new
