@@ -2,15 +2,25 @@
 <div class="row">
   <h2> Profile Page </h2>
 
+  <div id='app'></div>
+
+
 <h3><%= @user.first_name %></h3>
 
 <h3> Tasks </h3>
 
 <% @user.tasks.each do |task| %>
+
   <%= form_for(task) do |f| %>
-    <%= task.chore.title %>
-    <label> Task Completed? </label>
-    <%= f.check_box :completed %>
+    <label> Tasks </label>
+    <% if task.completed == true %>
+      <%= task.chore.title %> &nbsp; &nbsp;
+      <span class="success label"> Complete. </span>
+    <% else %>
+      <%= task.chore.title %>
+      <%= f.check_box :completed %>
+      <%= f.submit "Update" %>
+    <% end %>
   <% end %>
 <% end %>
 
