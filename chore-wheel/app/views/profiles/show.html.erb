@@ -7,22 +7,39 @@
 
 <h3><%= @user.first_name %></h3>
 
-<h3> Tasks </h3>
+<div class="row">
+  <div class="large-12 columns">
+    <p class="text-center">Tasks</p>
+  </div>
+</div>
 
-<% @user.tasks.each do |task| %>
-
-  <%= form_for(task) do |f| %>
-    <label> Tasks </label>
-    <% if task.completed == true %>
-      <%= task.chore.title %> &nbsp; &nbsp;
-      <span class="success label"> Complete. </span>
-    <% else %>
-      <%= task.chore.title %>
-      <%= f.check_box :completed %>
-      <%= f.submit "Update" %>
-    <% end %>
-  <% end %>
-<% end %>
+<div class="row">
+  <div class="large-12 columns">
+    <table>
+      <thead>
+        <th> Task </th>
+        <th class="text-center"> Status </th>
+      </thead>
+      <tbody>
+        <% @user.tasks.each do |task| %>
+        <tr>
+          <td> <%= task.chore.title %> </td>
+          <td class="text-center">
+              <%= form_for(task) do |f| %>
+                <% if task.completed == true %>
+                  <span class="success label text-white" > Complete </span>
+                <% else %>
+                  <%= f.check_box :completed %>
+                  <%= f.submit "Update" %>
+                <% end %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 
 <%= link_to 'Edit Profile', edit_user_registration_path(@user) %>

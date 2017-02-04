@@ -47,8 +47,6 @@ class TasksController< ApplicationController
       @task.update_attributes(task_params)
       # SINGLE = is assignemtn
       # DOUBLE == id comparison
-      print "GOT HERE"
-      print @task.inspect
 
       # if @task.completed == 1
       #   @task.completed = true
