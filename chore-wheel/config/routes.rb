@@ -3,8 +3,6 @@ Rails.application.routes.draw do
         sessions: 'users/sessions',
         registrations: 'users/registrations'
       }
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
   root to: "home#index"
 
   # get "/add_user_details" to: "users/registrations#add_user_details"
@@ -12,19 +10,22 @@ Rails.application.routes.draw do
 
   resources :dashboard, only: [:index]
   resources :home, only: [:index]
-
-  resources :chores
-
+  resources :chores, only: [:index, :create, :edit, :destroy]
   resources :users do
     resources :tasks
   end
-
   resources :tasks
-
   resources :profiles, only: [:show]
 
-  # before_filter :disable_nav, only: [:landing_page]
-
+  namespace :api do
+    namespace :v1 do
+      resources :users, only: [:fetch_users] do
+        collection do
+          get :fetch_users
+        end
+      end
+    end
+  end
 
 
 end

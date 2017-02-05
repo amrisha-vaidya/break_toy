@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 class Navigation extends Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+
+    };
   }
 
   render() {
