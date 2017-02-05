@@ -7,6 +7,6 @@ import App from './components/App';
 $(function() {
   ReactDOM.render(
     <App />,
-    document.getElementById('app')
+    document.getElementById('react-dashboard')
   );
 });
