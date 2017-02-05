@@ -6,7 +6,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      users: null
+      users: []
     };
 
     this.getUsersData = this.getUsersData.bind(this);
@@ -29,6 +29,7 @@ class App extends Component {
     .then(body => {
       let newUsers = body;
       this.setState({ users: newUsers });
+      // console.log(newUsers);
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
@@ -42,7 +43,8 @@ class App extends Component {
       <div>
         <div className='row'>
           <div className='large-12'>
-            < Uppercomponent />
+            < Uppercomponent
+            users = { this.state.users } />
           </div>
         </div>
         <div className='row'>
