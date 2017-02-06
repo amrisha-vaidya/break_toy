@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Chorefeed from './Chorefeed'
 
 class Uppercomponent extends Component {
   constructor(props) {
@@ -9,21 +10,26 @@ class Uppercomponent extends Component {
 
   render(){
     let usersList;
-    debugger;
+    let user = {};
     if (this.props.users) {
-      usersList = this.props.users.map((user) =>
-        <li> {user.first_name} </li>
+      usersList = this.props.users.map((user, i) =>
+      <li key={i}> {user.first_name} </li>
       );
+      user = this.props.users[0];
     }
-    console.log(usersList);
+
+
     return(
       <div className ='row'>
         <div className='large-6 columns'>
           <h3>Wheel Component </h3>
+          <ul> { usersList }</ul>
         </div>
+
         <div className='large-6 columns'>
-          <ul>{ usersList }</ul>
-        </div>s
+         < Chorefeed
+         user = {user} />
+        </div>
       </div>
     )
   }
@@ -31,16 +37,3 @@ class Uppercomponent extends Component {
 };
 
 export default Uppercomponent;
-
-// const listItems = numbers.map((number) =>
-//     <li>{number}</li>
-//   );
-//   return (
-//     <ul>{listItems}</ul>
-//   );
-// }
-//
-// const numbers = [1, 2, 3, 4, 5];
-// ReactDOM.render(
-//   <NumberList numbers={numbers} />,
-//   document.getElementById('root')
