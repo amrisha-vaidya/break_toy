@@ -41,8 +41,28 @@ class TasksController< ApplicationController
     end
   end
 
-  def destroy
+  def update
     if user_signed_in?
+      @task= Task.find(params[:id])
+      @task.update_attributes(task_params)
+      # SINGLE = is assignemtn
+      # DOUBLE == id comparison
+
+      # if @task.completed == 1
+      #   @task.completed = true
+      # else
+      #   @task.completed = false
+      # end
+      @task.save
+
+    redirect_to :back
+
+    end
+
+  end
+
+  def destroy
+    # if user_signed_in?
     # assign task must be destroyed after completed? is true ->
     # send out text message for this? to all housemates?
   end

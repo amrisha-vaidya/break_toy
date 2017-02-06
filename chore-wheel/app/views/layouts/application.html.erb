@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>ChoreWheel</title>
     <%= csrf_meta_tags %>
 
@@ -9,7 +13,8 @@
   </head>
 
   <body>
-    <%= render 'shared/navigation' unless current_page?(root_url || user_session_url) %>
+    <%= render 'shared/navigation' %>
+
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
     <% end %>
@@ -17,6 +22,8 @@
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
 
+
     <%= yield %>
+
   </body>
 </html>

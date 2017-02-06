@@ -1,26 +1,21 @@
 
-<div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
-  <button class="menu-icon" type="button" data-toggle> </button>
-  <div class="title-bar-title">Menu</div>
-</div>
-
-<div class="top-left-bar" id="main-menu">
-  <div class="top-bar-left">
-    <ul class="dropdown menu" data-dropdown-menu>
-      <strong><%= link_to 'ChoreStore', root_path %></strong>
-    </ul>
+  <div class="top-left-bar" id="main-menu">
+    <div class="top-bar-left">
+      <ul class="dropdown menu" data-dropdown-menu>
+        <strong><%= link_to 'ChoreStore', root_path %></strong>
+      </ul>
+    </div>
   </div>
-  <div class="top-bar align">
-    <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
-      <% if user_signed_in? %>
-      <li>
-          Logged in as <strong><%= link_to current_user.first_name, profile_path(current_user) %></strong>
-          <% if current_user.avatar? %>
-            <%= image_tag current_user.avatar, id: 'avatar-navbar' %>
-          <% end %>
-      </li>
-      <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete %> </li>
-      <% end %>
-    </ul>
-  </div>
-</div>
+    <div class="top-bar align">
+      <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
+        <% if user_signed_in? %>
+        <li>
+            Logged in as <strong><%= link_to current_user.first_name, profile_path(current_user) %></strong>
+            <% if current_user.avatar? %>
+              <%= image_tag current_user.avatar, id: 'avatar-navbar' %>
+            <% end %>
+        </li>
+        <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete %> </li>
+        <% end %>
+      </ul>
+    </div>

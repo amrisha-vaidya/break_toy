@@ -32,9 +32,25 @@ class ChoresController< ApplicationController
   def edit
     if user_signed_in?
       @chore = Chore.find(params[:id])
+
     else
       flash[:notice] = "Please sign in to edit this chore"
       redirect_to new_user_session_path
+    end
+  end
+
+  def update
+    if user_signed_in?
+      @chore = Chore.find(params[:id])
+      @chore.update_attributes(chore_params)
+
+      if @chore.save
+        redirect_to chore_path(@chore)
+        flash[:notice] = "Thank you for editing this chore"
+      else
+        flash[:alert] = @chore.errors.full_message.to_sentence
+        render :edit
+      end
     end
   end
 
