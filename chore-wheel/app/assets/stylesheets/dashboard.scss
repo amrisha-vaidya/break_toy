@@ -34,7 +34,7 @@ p{
 }
 
 .login-panel{
-  border-radius: 5px;
+  border-radius: 10px;
   border: 1px solid #ccc;
   padding: 15px;
   margin-top: 30px;
@@ -69,4 +69,8 @@ p{
 
 .text-white{
   color: white;
+}
+
+.sticky{
+  width: 100%
 }
