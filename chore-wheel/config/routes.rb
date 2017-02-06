@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resources :dashboard, only: [:index]
   resources :home, only: [:index]
-  resources :chores, only: [:index, :create, :edit, :destroy]
+  resources :chores, only: [:index, :create, :edit, :destroy, :new]
   resources :users do
     resources :tasks
   end
@@ -22,6 +22,12 @@ Rails.application.routes.draw do
       resources :users, only: [:fetch_users] do
         collection do
           get :fetch_users
+        end
+      end
+
+      resources :tasks, only: [:fetch_user_chores] do
+        collection do
+          get :fetch_user_chores
         end
       end
     end
