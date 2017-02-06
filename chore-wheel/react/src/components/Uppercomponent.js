@@ -15,7 +15,7 @@ class Uppercomponent extends Component {
       usersList = this.props.users.map((user, i) =>
       <li key={i}> {user.first_name} </li>
       );
-      user = this.props.users[3];
+      user = this.props.users[2];
     }
 
 

@@ -10,8 +10,9 @@ class Chorefeed extends Component {
     this.getTasksData = this.getTasksData.bind(this)
   }
 
-  getTasksData(){
-    fetch(`/api/v1/tasks/fetch_user_chores?users_id=4`, {
+  getTasksData(user){
+    let user_id = user ? user.id : null;
+    fetch(`/api/v1/tasks/fetch_user_chores?users_id=` + user_id, {
       credentials: 'same-origin'
     })
     .then(response => {
@@ -31,8 +32,10 @@ class Chorefeed extends Component {
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
-  componentWillMount() {
-    this.getTasksData();
+  componentWillReceiveProps(nextProps) {
+    if(JSON.stringify(nextProps) != JSON.stringify(this.props)){
+      this.getTasksData(nextProps.user);
+    }
   }
 
   render(){
