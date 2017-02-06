@@ -8,14 +8,18 @@ class Uppercomponent extends Component {
     };
   }
 
+  setFeedUser(user){
+    this.setState({feedUser: user});
+  }
+
+
   render(){
     let usersList;
     let user = {};
     if (this.props.users) {
       usersList = this.props.users.map((user, i) =>
-      <li key={i}> {user.first_name} </li>
+      <li key={i} onClick= {()=>this.setFeedUser(user)}> {user.first_name} </li>
       );
-      user = this.props.users[2];
     }
 
 
@@ -28,7 +32,7 @@ class Uppercomponent extends Component {
 
         <div className='large-6 columns'>
          < Chorefeed
-         user = {user} />
+         user = {this.state.feedUser} />
         </div>
       </div>
     )
