@@ -4,14 +4,14 @@ class Chorefeed extends Component {
   constructor(props){
     super(props);
     this.state = {
-      chores: []
+      tasks: []
     };
 
-    this.getChoresData = this.getChoresData.bind(this)
+    this.getTasksData = this.getTasksData.bind(this)
   }
 
-  getChoresData(){
-    fetch(`/api/v1/chores/fetch_user_chores`, {
+  getTasksData(){
+    fetch(`/api/v1/tasks/fetch_user_chores?users_id=4`, {
       credentials: 'same-origin'
     })
     .then(response => {
@@ -25,26 +25,24 @@ class Chorefeed extends Component {
     })
     .then(response => response.json())
     .then(body => {
-      let chores = body;
-      this.setState({ chores: chores });
+      let tasks = body;
+      this.setState({ tasks: tasks });
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   componentWillMount() {
-    this.getChoresData();
+    this.getTasksData();
   }
 
   render(){
     let choreFeed;
-    let currentUser = this.props.user;
-    debugger;
-    if (currentUser){
-      let chores = currentUser.chores;
-
-      if (chores) {
-        choreFeed = chores.map((chore, i) =>
-        <li key={i}>{ chore.title }</li>
+    let user = this.props.user;
+    let tasks = this.state.tasks;
+    if (user){
+      if (tasks) {
+        choreFeed = tasks.map((task, i) =>
+        <li key={i}>{ task.chore.title }</li>
       );
 
       }
