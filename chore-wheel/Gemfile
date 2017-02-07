@@ -30,7 +30,6 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
-gem 'pry-rails', '~> 0.3.4'
 gem 'awesome_print', '~> 1.7'
 gem 'foundation-rails'
 gem 'twilio-ruby'

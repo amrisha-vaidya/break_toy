@@ -47,8 +47,7 @@ class Chorefeed extends Component {
         choreFeed = tasks.map((task, i) =>
         <li className="chore-status-detail" key={i}>{ task.chore.title }</li>
       );
-
-      }
+    }
 
     }
 
@@ -57,10 +56,8 @@ class Chorefeed extends Component {
         <div className="small-6-columns">
           <div className="row" id="chore-status-panel">
             <h3> Chore Status </h3>
-          </div>
-          <div className="row" >
             <ul>
-              { choreFeed }
+              <p>{ choreFeed }</p>
             </ul>
           </div>
         </div>
