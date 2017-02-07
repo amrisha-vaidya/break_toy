@@ -45,7 +45,7 @@ class Chorefeed extends Component {
     if (user){
       if (tasks) {
         choreFeed = tasks.map((task, i) =>
-        <li key={i}>{ task.chore.title }</li>
+        <li className="chore-status-detail" key={i}>{ task.chore.title }</li>
       );
 
       }
@@ -53,11 +53,17 @@ class Chorefeed extends Component {
     }
 
     return(
-      <div>
-        <h3> Chore Status </h3>
-        <ul>
-          { choreFeed }
-        </ul>
+      <div className="row">
+        <div className="small-6-columns">
+          <div className="row" id="chore-status-panel">
+            <h3> Chore Status </h3>
+          </div>
+          <div className="row" >
+            <ul>
+              { choreFeed }
+            </ul>
+          </div>
+        </div>
       </div>
     )
   }

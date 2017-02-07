@@ -1,26 +1,26 @@
 <div id="page">
-  <div class="top-bar-container" data-sticky-container>
+  <div class="top-bar-container " data-sticky-container>
     <div class="sticky" data-sticky data-options="anchor: page; marginTop: 0; stickyOn: small;">
-      <div class="top-bar">
+      <div class="top-bar black ">
         <div class="row column">
           <div class="top-bar-left">
             <ul class ="menu">
               <% if user_signed_in? %>
-              <li> <strong><%= link_to 'ChoreStore', dashboard_index_path %></strong></li>
-              <li><%= link_to 'View Chore List', chores_path %></li>
+              <li> <strong><%= link_to 'ChoreStore', dashboard_index_path, class: "text-white" %></strong></li>
+              <li class="text-white"><%= link_to 'View Chore List', chores_path, class: "text-white" %></li>
               <% end %>
             </ul>
           </div>
           <div class="top-bar-right">
             <ul class="menu">
               <% if user_signed_in? %>
-              <li>
-                  Logged in as <strong><%= link_to current_user.first_name, profile_path(current_user) %></strong>
+              <li class="text-white">
+                  Logged in as <strong><%= link_to current_user.first_name, profile_path(current_user), class: "text-white" %></strong>
                   <% if current_user.avatar? %>
                     <%= image_tag current_user.avatar, id: 'avatar-navbar' %>
                   <% end %>
               </li>
-              <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete %> </li>
+              <li class="text-white"><%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: "text-white" %> </li>
               <% end %>
             </ul>
           </div>
