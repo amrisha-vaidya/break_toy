@@ -46,10 +46,13 @@ class App extends Component {
             users = { this.state.users } />
           </div>
         </div>
-        <div className='row'>
+        <div className='row text-center'>
           <div className='large-12'>
             <hr />
-            <h1> lower component </h1>
+            <span className='text-muted'>
+              <h5> <i className="fa fa-plus fa-small text-disabled">
+              </i> Add a chore </h5>
+            </span>
           </div>
         </div>
 

@@ -98,6 +98,15 @@ p{
 
 }
 
+.text-muted{
+  color: #aaa
+}
+
+.text-muted :hover{
+  color: #00a7e1;
+  cursor: pointer
+}
+
 
 // .hollow-button-white { @include button(
 //   $button-color: $white

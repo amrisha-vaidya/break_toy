@@ -70,6 +70,14 @@ class Chorefeed extends Component {
             <table>
               <tbody>
                 { choreFeed }
+                  <tr>
+                    <td className='text-muted'>
+                    <span>
+                    <i className='fa fa-plus'></i>&nbsp;Assign a chore...
+                    </span>
+                    </td>
+                    <td> </td>
+                  </tr>
               </tbody>
             </table>
           </div>
