@@ -2,6 +2,7 @@ import React, { Component } from  'React';
 
 class NewChoreForm extends React.Component {
   constructor(props){
+    super(props)
     this.state= {value: ''};
 
     this.handleChange = this.handleChange.bind(this);

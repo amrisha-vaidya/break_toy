@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Uppercomponent from './Uppercomponent';
+import Lowercomponent from './Lowercomponent';
 
 class App extends Component {
   constructor(props) {
@@ -40,21 +41,21 @@ class App extends Component {
   render() {
     return(
       <div>
+
         <div className='row '>
           <div className='large-12 large-centered columns'>
             < Uppercomponent
             users = { this.state.users } />
           </div>
         </div>
-        <div className='row text-center'>
-          <div className='large-12'>
-            <hr />
-            <span className='text-muted'>
-              <h5> <i className="fa fa-plus fa-small text-disabled">
-              </i> Add a chore </h5>
-            </span>
+
+        <div className='row '>
+          <div className='large-12 large-centered columns'>
+            < Lowercomponent />
           </div>
         </div>
+
+
 
       </div>
     )
