@@ -99,7 +99,8 @@ class Chorefeed extends Component {
         </div>
 
         <div className='row columns'>
-          <div className='large-12 columns'>
+          <div id='scroll-div' className='large-12 columns'>
+          <p class='text-center'> Select a user to see their chores </p>
             <table>
               <tbody>
                 { choreFeed }
