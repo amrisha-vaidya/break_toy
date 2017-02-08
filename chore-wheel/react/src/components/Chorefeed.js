@@ -41,11 +41,15 @@ class Chorefeed extends Component {
   render(){
     let choreFeed;
     let user = this.props.user;
+    let first_name = user ? user.first_name : null;
     let tasks = this.state.tasks;
     if (user){
       if (tasks) {
         choreFeed = tasks.map((task, i) =>
-        <li className="chore-status-detail" key={i}>{ task.chore.title }</li>
+        <tr key={i}>
+        <td> { task.chore.title } </td>
+        <td className='text-center'> {task.completed ? <strong><i className='fa fa-check'></i>&nbsp;Complete</strong> : 'Not Completed Yet'} </td>
+        </tr>
       );
     }
 
@@ -53,13 +57,30 @@ class Chorefeed extends Component {
 
     return(
       <div>
-        <div className='large-3-columns'>
+        <div className='large-12 columns text-center'>
           <h3> Chore Status </h3>
         </div>
-        <div className='large-3-columns'>
-          <ul>
-            <p>{ choreFeed }</p>
-          </ul>
+
+        <div className='large-12 columns text-center'>
+          <h5> { first_name } </h5>
+        </div>
+
+        <div className='row columns'>
+          <div className='large-12 columns'>
+            <table>
+              <tbody>
+                { choreFeed }
+                  <tr>
+                    <td className='text-muted'>
+                    <span>
+                    <i className='fa fa-plus'></i>&nbsp;Assign a chore...
+                    </span>
+                    </td>
+                    <td> </td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     )
@@ -68,5 +89,3 @@ class Chorefeed extends Component {
 
 
 export default Chorefeed;
-
-// <ListItem value={number} />

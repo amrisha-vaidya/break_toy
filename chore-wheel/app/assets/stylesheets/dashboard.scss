@@ -72,7 +72,7 @@ p{
 }
 
 .sticky{
-  width: 100%
+  width: 100%;
 }
 
 #chore-status-panel{
@@ -96,6 +96,15 @@ p{
   height: 100%;
   position: fixed;
 
+}
+
+.text-muted{
+  color: #aaa
+}
+
+.text-muted :hover{
+  color: #00a7e1;
+  cursor: pointer
 }
 
 

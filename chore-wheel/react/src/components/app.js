@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Uppercomponent from './Uppercomponent';
+import Lowercomponent from './Lowercomponent';
 
 class App extends Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class App extends Component {
     };
 
     this.getUsersData = this.getUsersData.bind(this);
+    this.updateAll = this.updateAll.bind(this);
   }
 
   getUsersData(){
@@ -28,7 +30,6 @@ class App extends Component {
     .then(body => {
       let newUsers = body;
       this.setState({ users: newUsers });
-      // console.log(newUsers);
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
@@ -37,20 +38,28 @@ class App extends Component {
     this.getUsersData();
   }
 
+  updateAll(){
+    this.setState({trigger: Date.now()})
+  }
+
   render() {
     return(
       <div>
+
         <div className='row '>
           <div className='large-12 large-centered columns'>
             < Uppercomponent
             users = { this.state.users } />
           </div>
         </div>
-        <div className='row'>
-          <div className='large-12'>
-            <h1> lower component </h1>
+
+        <div className='row '>
+          <div className='large-12 large-centered columns'>
+            < Lowercomponent updateAll= { this.updateAll } />
           </div>
         </div>
+
+
 
       </div>
     )
