@@ -52,14 +52,14 @@ class Chorefeed extends Component {
     }
 
     return(
-      <div className="row">
-        <div className="small-6-columns">
-          <div className="row" id="chore-status-panel">
-            <h3> Chore Status </h3>
-            <ul>
-              <p>{ choreFeed }</p>
-            </ul>
-          </div>
+      <div>
+        <div className='large-3-columns'>
+          <h3> Chore Status </h3>
+        </div>
+        <div className='large-3-columns'>
+          <ul>
+            <p>{ choreFeed }</p>
+          </ul>
         </div>
       </div>
     )

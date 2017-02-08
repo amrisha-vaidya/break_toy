@@ -33,9 +33,8 @@ class Uppercomponent extends Component {
 
 
     return(
-      <div className ='row'>
+      <div className ='row align-middle'>
         <div className='large-6 columns'>
-          <h3>Wheel Component </h3>
           <PieChart
              labels
              data={ pieData }
@@ -47,7 +46,7 @@ class Uppercomponent extends Component {
            <ul> { usersList }</ul>
         </div>
 
-        <div className='large-6 columns'>
+        <div className='large-6 columns' id='chore-status-panel'>
          < Chorefeed
          user = {this.state.feedUser} />
         </div>

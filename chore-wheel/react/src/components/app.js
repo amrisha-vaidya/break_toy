@@ -40,8 +40,8 @@ class App extends Component {
   render() {
     return(
       <div>
-        <div className='row'>
-          <div className='large-12'>
+        <div className='row '>
+          <div className='large-12 large-centered columns'>
             < Uppercomponent
             users = { this.state.users } />
           </div>
