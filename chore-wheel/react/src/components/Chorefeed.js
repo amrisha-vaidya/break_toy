@@ -58,7 +58,7 @@ class Chorefeed extends Component {
     let first_name = user ? user.first_name : null;
     let tasks = this.state.tasks;
 
-    let assignChoreButton = 
+    let assignChoreButton =
       <tr>
         <td className='text-muted'>
           <span onClick= { this.turnShowAssignFormOn }>
@@ -81,7 +81,7 @@ class Chorefeed extends Component {
 
     let toShow;
     if (this.state.showAssignForm){
-      toShow = <NewTask chores = { this.state.chores }/>
+      toShow = <NewTask chores = { this.props.chores }/>
     } else {
       toShow = assignChoreButton;
     }

@@ -17,6 +17,8 @@ class NewTask extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    this.props.value()
+
   }
 
 
@@ -42,7 +44,7 @@ class NewTask extends Component {
 			        </label>
 			      </form>
         </td>
-        <td>   <input type="submit" value="Submit" /> </td>
+        <td>   <input type="submit" value="Assign" /> </td>
       </tr>
 		)
   }
