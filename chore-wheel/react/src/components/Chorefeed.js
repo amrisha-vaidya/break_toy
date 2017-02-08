@@ -1,13 +1,17 @@
 import React, { Component } from  'React';
+import NewTask from './NewTask';
 
 class Chorefeed extends Component {
   constructor(props){
     super(props);
     this.state = {
-      tasks: []
+      tasks: [],
+      showAssignForm: false
     };
 
-    this.getTasksData = this.getTasksData.bind(this)
+    this.getTasksData = this.getTasksData.bind(this);
+    this.turnShowAssignFormOn = this.turnShowAssignFormOn.bind(this);
+    this.turnShowAssignFormOff = this.turnShowAssignFormOff.bind(this);
   }
 
   getTasksData(user){
@@ -38,22 +42,51 @@ class Chorefeed extends Component {
     }
   }
 
+  turnShowAssignFormOn(event){
+    let that = this;
+    that.setState({showAssignForm: true});
+  }
+
+  turnShowAssignFormOff(event){
+    let that = this;
+    that.setState({showAssignForm: false});
+  }
+
   render(){
     let choreFeed;
     let user = this.props.user;
     let first_name = user ? user.first_name : null;
     let tasks = this.state.tasks;
+
+    let assignChoreButton = 
+      <tr>
+        <td className='text-muted'>
+          <span onClick= { this.turnShowAssignFormOn }>
+            <i className='fa fa-plus'></i>&nbsp;Assign a chore...
+          </span>
+        </td>
+        <td> </td>
+      </tr>
+
     if (user){
       if (tasks) {
         choreFeed = tasks.map((task, i) =>
-        <tr key={i}>
-        <td> { task.chore.title } </td>
-        <td className='text-center'> {task.completed ? <strong><i className='fa fa-check'></i>&nbsp;Complete</strong> : 'Not Completed Yet'} </td>
-        </tr>
-      );
+          <tr key={i}>
+          <td> { task.chore.title } </td>
+          <td className='text-center'> {task.completed ? <strong><i className='fa fa-check'></i>&nbsp;Complete</strong> : 'Not Completed Yet'} </td>
+          </tr>
+        );
+      }
     }
 
+    let toShow;
+    if (this.state.showAssignForm){
+      toShow = <NewTask chores = { this.state.chores }/>
+    } else {
+      toShow = assignChoreButton;
     }
+
+
 
     return(
       <div>
@@ -70,14 +103,8 @@ class Chorefeed extends Component {
             <table>
               <tbody>
                 { choreFeed }
-                  <tr>
-                    <td className='text-muted'>
-                    <span>
-                    <i className='fa fa-plus'></i>&nbsp;Assign a chore...
-                    </span>
-                    </td>
-                    <td> </td>
-                  </tr>
+
+                { toShow }
               </tbody>
             </table>
           </div>

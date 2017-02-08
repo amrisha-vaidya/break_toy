@@ -33,14 +33,13 @@ class Uppercomponent extends Component {
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
-  componentWillMount() {
-    this.getChoreData();
-  }
-
   setFeedUser(user){
     this.setState({feedUser: user});
   }
 
+  componentWillMount() {
+    this.getChoreData();
+  } 
 
   render(){
     let usersList;
@@ -77,7 +76,8 @@ class Uppercomponent extends Component {
 
         <div className='large-6 columns' id='chore-status-panel'>
          < Chorefeed
-         user = {this.state.feedUser} />
+         user = {this.state.feedUser} 
+         chores = { this.state.chores } />
         </div>
       </div>
     )

@@ -5,15 +5,14 @@ Rails.application.routes.draw do
       }
   root to: "home#index"
 
-  # get "/add_user_details" to: "users/registrations#add_user_details"
-  # post "/add_user_details" to: "users/registrations#add_user_details_post"
-
   resources :dashboard, only: [:index]
   resources :home, only: [:index]
   resources :chores, only: [:index, :create, :edit, :destroy, :new]
+
   resources :users do
     resources :tasks
   end
+
   resources :tasks
   resources :profiles, only: [:show]
 
@@ -30,8 +29,12 @@ Rails.application.routes.draw do
           get :fetch_user_chores
         end
       end
+      
+      resources :chores, only: [:fetch_chores] do
+        collection do
+          get :fetch_chores
+        end
+      end
     end
   end
-
-
 end
