@@ -34,16 +34,17 @@ class Uppercomponent extends Component {
 
     return(
       <div className ='row align-middle'>
-        <div className='large-6 columns'>
+        <div className='large-6 columns medium-3 columns small-2 columns'>
+        <br />
           <PieChart
              labels
              data={ pieData }
-             innerHoleSize={200}
+             innerHoleSize={190}
              clickHandler={
                (d) => this.setState( {feedUser: d.data.user} )
              }
            />
-           <ul> { usersList }</ul>
+
         </div>
 
         <div className='large-6 columns' id='chore-status-panel'>

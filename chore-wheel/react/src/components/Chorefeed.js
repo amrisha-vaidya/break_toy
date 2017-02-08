@@ -41,6 +41,7 @@ class Chorefeed extends Component {
   render(){
     let choreFeed;
     let user = this.props.user;
+    let first_name = user ? user.first_name : null;
     let tasks = this.state.tasks;
     if (user){
       if (tasks) {
@@ -53,8 +54,9 @@ class Chorefeed extends Component {
 
     return(
       <div>
-        <div className='large-3-columns'>
+        <div className='large-3-columns text-center'>
           <h3> Chore Status </h3>
+          <h5> { first_name } </h5>
         </div>
         <div className='large-3-columns'>
           <ul>

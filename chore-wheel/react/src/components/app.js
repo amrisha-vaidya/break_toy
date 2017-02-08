@@ -48,6 +48,7 @@ class App extends Component {
         </div>
         <div className='row'>
           <div className='large-12'>
+            <hr />
             <h1> lower component </h1>
           </div>
         </div>
