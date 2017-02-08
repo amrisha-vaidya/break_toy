@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Chorefeed from './Chorefeed'
+import Chorefeed from './Chorefeed';
+import {PieChart} from 'react-easy-chart';
 
 class Uppercomponent extends Component {
   constructor(props) {
@@ -8,27 +9,46 @@ class Uppercomponent extends Component {
     };
   }
 
+  setFeedUser(user){
+    this.setState({feedUser: user});
+  }
+
+
   render(){
     let usersList;
     let user = {};
+    let pieData=[];
+
     if (this.props.users) {
       usersList = this.props.users.map((user, i) =>
-      <li key={i}> {user.first_name} </li>
+      <li key={i} onClick= {()=>this.setFeedUser(user)}> {user.first_name} </li>
       );
-      user = this.props.users[3];
+
+      let value = 360 / this.props.users.length;
+      this.props.users.forEach(function(user){
+        let datum = {key: user.first_name, value:value, user:user};
+        pieData.push(datum);
+      })
     }
 
 
     return(
-      <div className ='row'>
+      <div className ='row align-middle'>
         <div className='large-6 columns'>
-          <h3>Wheel Component </h3>
-          <ul> { usersList }</ul>
+          <PieChart
+             labels
+             data={ pieData }
+             innerHoleSize={200}
+             clickHandler={
+               (d) => this.setState( {feedUser: d.data.user} )
+             }
+           />
+           <ul> { usersList }</ul>
         </div>
 
-        <div className='large-6 columns'>
+        <div className='large-6 columns' id='chore-status-panel'>
          < Chorefeed
-         user = {user} />
+         user = {this.state.feedUser} />
         </div>
       </div>
     )

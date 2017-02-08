@@ -1,8 +1,13 @@
 <% if user_signed_in? %>
-<h1> Home page be like whattttt</h1>
 <%= link_to 'View Chore List', chores_path %>
-<%= link_to 'User Profile', profile_path, method: :get %>
+<%= link_to 'User Profile', profile_path(current_user), method: :get %>
 <% else %>
-<%= link_to 'Log in', user_session_path %>
-
+<div id="landing" >
+  <div class="row">
+    <div class= " large-12 large-centered columns">
+      <p class="text-center"><%= link_to 'Log in', user_session_path, class: "hollow button"%>
+      <%= link_to 'Sign Up', new_user_registration_path, class: "hollow button" %></p>
+    </div>
+  </div>
+</div>
 <% end %>

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Navigation from './Navigation';
 import Uppercomponent from './Uppercomponent';
 
 class App extends Component {
@@ -41,8 +40,8 @@ class App extends Component {
   render() {
     return(
       <div>
-        <div className='row'>
-          <div className='large-12'>
+        <div className='row '>
+          <div className='large-12 large-centered columns'>
             < Uppercomponent
             users = { this.state.users } />
           </div>
