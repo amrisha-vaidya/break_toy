@@ -4,9 +4,33 @@ import {PieChart} from 'react-easy-chart';
 
 class Uppercomponent extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
+      chores: []
     };
+
+    this.getChoreData = this.getChoreData.bind(this);
+  }
+
+  getChoreData(){
+    fetch(`/api/v1/chores/fetch_chores`,{
+      credentials: 'same-origin'
+    })
+    .then(response => {
+      if(response.ok) {
+        return response;
+      } else {
+        let errorMessage = `${response.status}, (${response.statusText})`;
+        let error = new Error(errorMessage);
+        throw(error);
+      }
+    })
+    .then(response => response.json())
+    .then(body => {
+      let newChores = body;
+      this.setState({ chores: newChores});
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   setFeedUser(user){
