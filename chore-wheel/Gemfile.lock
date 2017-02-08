@@ -95,6 +95,8 @@ GEM
     faraday (0.10.1)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.17)
+    font-awesome-rails (4.7.0.1)
+      railties (>= 3.2, < 5.1)
     foundation-rails (6.3.0.0)
       railties (>= 3.1.0)
       sass (>= 3.3.0, < 3.5)
@@ -273,6 +275,7 @@ DEPENDENCIES
   coveralls
   devise
   dotenv-rails
+  font-awesome-rails
   foundation-rails
   jbuilder (~> 2.5)
   jquery-rails
