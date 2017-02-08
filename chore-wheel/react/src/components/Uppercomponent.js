@@ -33,6 +33,10 @@ class Uppercomponent extends Component {
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
+  componentWillMount() {
+    this.getChoreData();
+  }
+
   setFeedUser(user){
     this.setState({feedUser: user});
   }
