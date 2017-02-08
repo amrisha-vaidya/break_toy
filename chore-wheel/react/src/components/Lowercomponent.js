@@ -9,11 +9,17 @@ class Lowercomponent extends Component {
     };
 
     this.turnShowFormOn = this.turnShowFormOn.bind(this);
+    this.turnShowFormOff = this.turnShowFormOff.bind(this);
   }
 
   turnShowFormOn(event){
   	let that = this;
   	that.setState({showForm: true});
+  }
+
+  turnShowFormOff(event){
+  	let that = this;
+  	that.setState({showForm: false});
   }
 
   render(){
@@ -33,7 +39,7 @@ class Lowercomponent extends Component {
 
   	let toShow;
   	if (this.state.showForm){
-  		toShow = <NewChoreForm />
+  		toShow = <NewChoreForm updateAll={ this.props.updateAll } turnShowFormOff={ this.turnShowFormOff } />
   	} else {
   		toShow = addChoreButton
   	}

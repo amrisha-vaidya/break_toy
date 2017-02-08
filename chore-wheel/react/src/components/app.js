@@ -10,6 +10,7 @@ class App extends Component {
     };
 
     this.getUsersData = this.getUsersData.bind(this);
+    this.updateAll = this.updateAll.bind(this);
   }
 
   getUsersData(){
@@ -29,13 +30,16 @@ class App extends Component {
     .then(body => {
       let newUsers = body;
       this.setState({ users: newUsers });
-      // console.log(newUsers);
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   componentWillMount() {
     this.getUsersData();
+  }
+
+  updateAll(){
+    this.setState({trigger: Date.now()})
   }
 
   render() {
@@ -51,7 +55,7 @@ class App extends Component {
 
         <div className='row '>
           <div className='large-12 large-centered columns'>
-            < Lowercomponent />
+            < Lowercomponent updateAll= { this.updateAll } />
           </div>
         </div>
 

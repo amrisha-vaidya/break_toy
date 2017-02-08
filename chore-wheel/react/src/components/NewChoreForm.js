@@ -14,7 +14,8 @@ class NewChoreForm extends React.Component {
   }
 
   handleSubmit(event){
-    alert('A title was added:' + this.state.value);
+    this.props.turnShowFormOff();
+    // this.props.updateAll();
     event.preventDefault();
   }
 
