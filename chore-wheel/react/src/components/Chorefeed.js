@@ -69,7 +69,7 @@ class Chorefeed extends Component {
         </td>
         <td> </td>
       </tr>
-    } 
+    }
 
     if (user){
       if (tasks) {
@@ -101,7 +101,7 @@ class Chorefeed extends Component {
             </div>
             <div className="panel-body">
               <div className='row'>
-                <div id='scroll-div' className='col-lg-12 col-md-12'>
+                <div className='col-lg-12 col-md-12 scroll-div'>
                   <table className='table table-striped'>
                     <tbody>
                       { choreFeed }

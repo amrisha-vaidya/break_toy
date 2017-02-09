@@ -107,7 +107,7 @@ p{
   cursor: pointer
 }
 
-#scroll-div{
+.scroll-div{
   height: 400px;
   overflow: scroll;
 }
@@ -120,13 +120,11 @@ p{
     border-color: #ddd;
     color: #ddd;
 }
+.btn-huge{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
 
-.panel > .panel-custom-styling {
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  padding: 15px;
-  margin-top: 30px;
-  font-size: 30px;
-  line-height: 50px;
-  color: #999;
+.bot-buffer{
+  margin-bottom: 10px;
 }
