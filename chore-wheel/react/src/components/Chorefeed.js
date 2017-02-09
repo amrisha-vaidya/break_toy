@@ -93,7 +93,7 @@ class Chorefeed extends Component {
 
       <div className="row">
         <div className='col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1  '>
-          <div className="panel panel-default">
+          <div className="panel panel-primary">
             <div className="panel-heading text-center">
               <h4> Chore Status </h4>
               <small className='text-center'> Select a user to see their chores </small>

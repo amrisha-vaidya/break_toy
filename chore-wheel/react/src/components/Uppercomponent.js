@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Chorefeed from './Chorefeed';
 import UserPanel from './UserPanel';
 import GeneralWheel from './GeneralWheel';
+import UserWheel from './UserWheel';
+
 
 
 class Uppercomponent extends Component {
@@ -49,6 +51,14 @@ class Uppercomponent extends Component {
     let user = {};
     let pieData=[];
 
+    let displayWheel;
+
+    if (this.state.feedUser){
+      displayWheel = <UserWheel setFeedUser={ this.setFeedUser } user= { this.state.feedUser }/>
+    } else {
+      displayWheel = <GeneralWheel setFeedUser={ this.setFeedUser } users= { this.props.users }/>
+    }
+
     return(
       <div className ='row'>
         <div className='col-lg-4 col-md-4 text-center'>
@@ -57,7 +67,7 @@ class Uppercomponent extends Component {
         </div>
 
         <div className='col-lg-4 col-md-4 text-center'>
-          <GeneralWheel setFeedUser={ this.setFeedUser } users= { this.props.users }/>
+          { displayWheel }
         </div>
 
         <div className='col-lg-4'>

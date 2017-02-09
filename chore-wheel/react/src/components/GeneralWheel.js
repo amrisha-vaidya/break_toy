@@ -22,8 +22,6 @@ class GeneralWheel extends Component {
 				}
 			}
     }
-
-
   }
 
   clickHandler(event, legendItem){
@@ -62,7 +60,7 @@ class GeneralWheel extends Component {
   render(){
   	return (
   		<div>
-      	<h2>Doughnut Example</h2>
+      	<h2>Household Members</h2>
       	<Doughnut data={this.state.chartData} options={this.state.chartOptions}/>
     	</div>
     )
