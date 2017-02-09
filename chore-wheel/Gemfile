@@ -31,11 +31,11 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 gem 'awesome_print', '~> 1.7'
-gem 'foundation-rails'
 gem 'twilio-ruby'
 gem 'omniauth-facebook'
 gem 'carrierwave', '~> 0.11.2'
 gem 'font-awesome-rails'
+gem 'twitter-bootstrap-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -42,7 +42,6 @@
     "d3-time-format": "^2.0.3",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "react-easy-chart": "^0.1.12",
     "react-faux-dom": "^2.5.0",
     "react-redux": "^4.4.5",
     "react-router": "^2.4.0",
