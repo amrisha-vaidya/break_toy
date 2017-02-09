@@ -69,7 +69,7 @@ class Chorefeed extends Component {
         </td>
         <td> </td>
       </tr>
-    }
+    } 
 
     if (user){
       if (tasks) {
@@ -96,7 +96,6 @@ class Chorefeed extends Component {
           <div className="panel panel-primary">
             <div className="panel-heading text-center">
               <h4> Chore Status </h4>
-              <small className='text-center'> Select a user to see their chores </small>
               <small> { first_name } </small>
             </div>
             <div className="panel-body">

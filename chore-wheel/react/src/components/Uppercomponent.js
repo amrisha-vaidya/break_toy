@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Chorefeed from './Chorefeed';
-import UserPanel from './UserPanel';
+import UsersPanel from './UsersPanel';
 import GeneralWheel from './GeneralWheel';
 import UserWheel from './UserWheel';
 
@@ -63,7 +63,7 @@ class Uppercomponent extends Component {
       <div className ='row'>
         <div className='col-lg-4 col-md-4 text-center'>
           {/*<h3> user Component</h3>*/}
-          <UserPanel setFeedUser={ this.setFeedUser } users= { this.props.users }/>
+          <UsersPanel setFeedUser={ this.setFeedUser } users= { this.props.users }/>
         </div>
 
         <div className='col-lg-4 col-md-4 text-center'>
