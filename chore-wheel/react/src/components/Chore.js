@@ -6,3 +6,4 @@ class Chore extends Component {
     this.state = {}
   }
 }
+

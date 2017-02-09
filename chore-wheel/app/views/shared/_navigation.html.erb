@@ -1,5 +1,4 @@
 
-
 <div class='row'>
   <div class="col-lg-12 ">
       <nav class="navbar navbar-default navbar-inverse">
@@ -7,13 +6,16 @@
   			<div class="row">
   				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
   					<ul class="nav navbar-nav">
-              <li class="active "><%= link_to 'ChoreStore', dashboard_index_path, class: "text-white" %></li>
-              <li class="text-white"><%= link_to 'View Chore List', chores_path, class: "text-white" %></li>
-  						<li><a href="#">About</a></li>
-  						<li><a href="#">Services</a></li>
-  						<li><a href="#">Gallery</a></li>
-  						<li><a href="#">Contact us</a></li>
-  					</ul>
+                <li class="active"><%= link_to 'ChoreStore', dashboard_index_path%></li>
+                <li class="text-white"><%= link_to 'View Chore List', chores_path %></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <% if user_signed_in? %>
+                <li class="text-white"><%= link_to current_user.first_name, profile_path(current_user)%></li>
+              <% end %>
+              <li  class="text-white">
+              <%= link_to 'Log Out', destroy_user_session_path, method: :delete %></li>
+            </ul>
   				</div>
   			</div>
   		</div>

@@ -25,7 +25,7 @@ class Lowercomponent extends Component {
   render(){
 
   	let addChoreButton =
-  		<div className='large-12'>
+  		<div className='col-lg-12 col-md-12'>
   				<hr />
 					<span className='text-muted'>
 						<h5>

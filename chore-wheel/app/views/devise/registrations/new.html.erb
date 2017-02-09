@@ -1,12 +1,12 @@
 <div class="row">
-  <div class="large-offset-3 large-6 columns">
+  <div class="lg-offset-3 lg-col-6 ">
       <div class="signup-panel">
         <p class="welcome">Hello! Welcome to the ChoreStore</p>
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= devise_error_messages! %>
 
         <div class="row collapse">
-          <div class="small-10 small-centered columns">
+          <div class="sm-col-10">
             <%= f.text_field :first_name, placeholder: "First Name", autofocus: true %> <br />
           </div>
         </div>

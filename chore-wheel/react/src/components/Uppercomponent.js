@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import Chorefeed from './Chorefeed';
-import {PieChart} from 'react-easy-chart';
+import UserPanel from './UserPanel';
+import GeneralWheel from './GeneralWheel';
+
 
 class Uppercomponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      chores: []
+      chores: [""]
     };
 
     this.getChoreData = this.getChoreData.bind(this);
+    this.setFeedUser = this.setFeedUser.bind(this);
   }
 
   getChoreData(){
@@ -46,49 +49,22 @@ class Uppercomponent extends Component {
     let user = {};
     let pieData=[];
 
-    if (this.props.users) {
-      usersList = this.props.users.map((user, i) =>
-      <li key={i} onClick= {()=>this.setFeedUser(user)}> {user.first_name} </li>
-      );
-
-      let value = 360 / this.props.users.length;
-
-      this.props.users.forEach(function(user){
-        let datum = {key: user.first_name, value:value, user:user};
-        pieData.push(datum);
-      })
-    }
-
-
     return(
-      <div className ='row align-middle'>
-        <div className='large-6 columns medium-3 columns small-2 columns'>
-        <br />
-          <PieChart
-             labels
-             styles={{
-              '.chart_lines': {
-                strokeWidth: 30
-              },
-              '.chart_text': {
-                fontFamily: 'serif',
-                fontSize: '1.25em',
-                fill: '#333'
-              }
-            }}
-             data={ pieData }
-             innerHoleSize={190}
-             clickHandler={
-               (d) => this.setState( {feedUser: d.data.user} )
-             }
-           />
-
+      <div className ='row'>
+        <div className='col-lg-4 col-md-4 text-center'>
+          {/*<h3> user Component</h3>*/}
+          <UserPanel setFeedUser={ this.setFeedUser } users= { this.props.users }/>
         </div>
 
-        <div className='large-6 columns' id='chore-status-panel'>
-         < Chorefeed
-         user = {this.state.feedUser}
-         chores = { this.state.chores } />
+        <div className='col-lg-4 col-md-4 text-center'>
+          <GeneralWheel setFeedUser={ this.setFeedUser } users= { this.props.users }/>
+        </div>
+
+        <div className='col-lg-4'>
+          <Chorefeed
+            user = {this.state.feedUser}
+            chores = { this.state.chores } 
+          />
         </div>
       </div>
     )

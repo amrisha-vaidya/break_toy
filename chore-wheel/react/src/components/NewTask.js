@@ -43,7 +43,7 @@ class NewTask extends Component {
 			        </label>
 			      </form>
         </td>
-        <td>   <input type="submit" value="Assign" /> </td>
+        <td><input type="submit" value="Assign" /> </td>
       </tr>
 		)
   }

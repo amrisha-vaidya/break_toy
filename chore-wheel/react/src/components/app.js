@@ -47,14 +47,13 @@ class App extends Component {
       <div>
 
         <div className='row '>
-          <div className='large-12 large-centered columns'>
+          <div className='col-lg-12 large-centered columns'>
             < Uppercomponent
             users = { this.state.users } />
           </div>
         </div>
-
         <div className='row '>
-          <div className='large-12 large-centered columns'>
+          <div className='col-lg-12 large-centered columns'>
             < Lowercomponent updateAll= { this.updateAll } />
           </div>
         </div>

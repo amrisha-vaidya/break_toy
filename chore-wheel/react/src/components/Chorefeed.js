@@ -58,7 +58,9 @@ class Chorefeed extends Component {
     let first_name = user ? user.first_name : null;
     let tasks = this.state.tasks;
 
-    let assignChoreButton =
+    let assignChoreButton;
+    if (user){
+      assignChoreButton=
       <tr>
         <td className='text-muted'>
           <span onClick= { this.turnShowAssignFormOn }>
@@ -67,6 +69,7 @@ class Chorefeed extends Component {
         </td>
         <td> </td>
       </tr>
+    } 
 
     if (user){
       if (tasks) {
@@ -86,28 +89,29 @@ class Chorefeed extends Component {
       toShow = assignChoreButton;
     }
 
-
-
     return(
-      <div>
-        <div className='large-12 columns text-center'>
-          <h3> Chore Status </h3>
-        </div>
 
-        <div className='large-12 columns text-center'>
-          <h5> { first_name } </h5>
-        </div>
+      <div className="row">
+        <div className='col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1  '>
+          <div className="panel panel-default">
+            <div className="panel-heading text-center">
+              <h4> Chore Status </h4>
+              <small className='text-center'> Select a user to see their chores </small>
+              <small> { first_name } </small>
+            </div>
+            <div className="panel-body">
+              <div className='row'>
+                <div id='scroll-div' className='col-lg-12 col-md-12'>
+                  <table className='table table-striped'>
+                    <tbody>
+                      { choreFeed }
 
-        <div className='row columns'>
-          <div id='scroll-div' className='large-12 columns'>
-          <p class='text-center'> Select a user to see their chores </p>
-            <table>
-              <tbody>
-                { choreFeed }
-
-                { toShow }
-              </tbody>
-            </table>
+                      { toShow }
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
