@@ -4,9 +4,10 @@
 <% else %>
 <div id="landing" >
   <div class="row">
-    <div class= " large-12 large-centered columns">
-      <p class="text-center"><%= link_to 'Log in', user_session_path, class: "hollow button"%>
-      <%= link_to 'Sign Up', new_user_registration_path, class: "hollow button" %></p>
+    <div class= "large-offset-10 large-2 large-centered columns">
+      <br/>
+      <button class="hollow button white"><%= link_to 'Log in', user_session_path%></button>
+      <button class="hollow button white"><%= link_to 'Sign Up', new_user_registration_path%></button>
     </div>
   </div>
 </div>

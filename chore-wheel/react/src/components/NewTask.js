@@ -17,8 +17,7 @@ class NewTask extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.value()
-
+    this.props.value();
   }
 
 

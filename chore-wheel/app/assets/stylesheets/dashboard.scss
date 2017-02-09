@@ -112,8 +112,11 @@ p{
   overflow: scroll;
 }
 
-
-// .hollow-button-white { @include button(
-//   $button-color: $white
-//   );
-// }
+.button.hollow.white {
+    border: 1px solid #ffffff;
+    text-color: #ffffff;
+}
+.button.hollow.white:focus, .button.hollow.white:hover {
+    border-color: #ddd;
+    color: #ddd;
+}

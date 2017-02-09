@@ -39,7 +39,7 @@ class Uppercomponent extends Component {
 
   componentWillMount() {
     this.getChoreData();
-  } 
+  }
 
   render(){
     let usersList;
@@ -52,6 +52,7 @@ class Uppercomponent extends Component {
       );
 
       let value = 360 / this.props.users.length;
+
       this.props.users.forEach(function(user){
         let datum = {key: user.first_name, value:value, user:user};
         pieData.push(datum);
@@ -65,6 +66,16 @@ class Uppercomponent extends Component {
         <br />
           <PieChart
              labels
+             styles={{
+              '.chart_lines': {
+                strokeWidth: 30
+              },
+              '.chart_text': {
+                fontFamily: 'serif',
+                fontSize: '1.25em',
+                fill: '#333'
+              }
+            }}
              data={ pieData }
              innerHoleSize={190}
              clickHandler={
@@ -76,7 +87,7 @@ class Uppercomponent extends Component {
 
         <div className='large-6 columns' id='chore-status-panel'>
          < Chorefeed
-         user = {this.state.feedUser} 
+         user = {this.state.feedUser}
          chores = { this.state.chores } />
         </div>
       </div>
