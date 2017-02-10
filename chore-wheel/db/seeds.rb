@@ -7,33 +7,67 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Chore.create(
-title: "Take out trash",
-description:"Trash day is thursdays and mondays, please take out trash by 7 pm night before",
-created_at: Time.now,
-updated_at: Time.now
+	title: "Do the Dishes",
+	description: "Thursday and Monday",
+	created_at: Time.now,
+	updated_at: Time.now
 )
 
 Chore.create(
-title: "Clean the common area",
-description:"Please put away all board games and vacumm the area",
-created_at: Time.now,
-updated_at: Time.now
+	title: "Clean the common area",
+	description: "Make sure you clean the dining room and the living room.",
+	created_at: Time.now,
+	updated_at: Time.now
 )
 
-Chore.create(title: "Clean Up Bathroom",
-description:"Gloves and cleaning materials are under the sink",
-created_at: Time.now,
-updated_at: Time.now
+Chore.create(
+	title: "Take out cat litter",
+	description: "Every Wednesday",
+	created_at: Time.now,
+	updated_at: Time.now
 )
 
-Chore.create(title: "Take out cat litter",
-description:"Clean up the litter box every wednesday",
-created_at: Time.now,
-updated_at: Time.now
+Chore.create(
+	title: "Mop the floor",
+	description: "Mops are in the closet.",
+	created_at: Time.now,
+	updated_at: Time.now
 )
 
-Chore.create(title: "Swiffer Kitchen area",
-description:"Swiffer is in the cupboard, please mop the floor with it.",
-created_at: Time.now,
-updated_at: Time.now
+User.create :first_name => "John", :last_name => "Smith", :email => "user1@example.com", :password => "user123", :phone_number => "717-344-7575"
+
+User.create :first_name => "Mary", :last_name => "Anne", :email => "user2@example.com", :password => "user123", :phone_number => "336-692-6843"
+
+User.create :first_name => "Sue", :last_name => "Patterson", :email => "user3@example.com", :password => "user123", :phone_number => "717-344-7575"
+
+Task.create(
+	finish_by: Time.now + 1.day,
+	users_id: 2,
+	chores_id: 1,
+	created_at: Time.now,
+	updated_at: Time.now
+)
+
+Task.create(
+	finish_by: Time.now + 1.day,
+	users_id: 2,
+	chores_id: 2,
+	created_at: Time.now,
+	updated_at: Time.now
+)
+
+Task.create(
+	finish_by: Time.now + 1.day,
+	users_id: 1,
+	chores_id: 3,
+	created_at: Time.now,
+	updated_at: Time.now
+)
+
+Task.create(
+	finish_by: Time.now + 1.day,
+	users_id: 3,
+	chores_id: 4,
+	created_at: Time.now,
+	updated_at: Time.now
 )
