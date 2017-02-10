@@ -24,15 +24,17 @@ Rails.application.routes.draw do
         end
       end
 
-      resources :tasks, only: [:fetch_user_chores] do
+      resources :tasks, only: [:fetch_user_chores, :create_task] do
         collection do
           get :fetch_user_chores
+          post :create_task
         end
       end
       
-      resources :chores, only: [:fetch_chores] do
+      resources :chores, only: [:fetch_chores, :create_chore] do
         collection do
           get :fetch_chores
+          post :create_chore
         end
       end
     end

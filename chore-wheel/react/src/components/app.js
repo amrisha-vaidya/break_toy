@@ -49,7 +49,9 @@ class App extends Component {
         <div className='row '>
           <div className='col-lg-12 large-centered columns'>
             < Uppercomponent
-            users = { this.state.users } />
+                users = { this.state.users } 
+                updateChoreTrigger = { this.state.trigger }
+              />
           </div>
         </div>
         <div className='row '>

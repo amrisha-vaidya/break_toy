@@ -46,6 +46,14 @@ class Uppercomponent extends Component {
     this.getChoreData();
   }
 
+  componentWillReceiveProps(nextProps) {
+    if(JSON.stringify(nextProps) != JSON.stringify(this.props)){
+      if (nextProps.trigger != this.props.trigger){
+        this.getChoreData();
+      }
+    }
+  }
+
   render(){
     let usersList;
     let user = {};

@@ -1,14 +1,14 @@
-<% if user_signed_in? %>
-<%= link_to 'View Chore List', chores_path %>
-<%= link_to 'User Profile', profile_path(current_user), method: :get %>
-<% else %>
+
 <div id="landing" >
-  <div class="row">
-    <div class= "large-offset-10 large-2 large-centered columns">
-      <br/>
-      <button class="hollow button white"><%= link_to 'Log in', user_session_path%></button>
-      <button class="hollow button white"><%= link_to 'Sign Up', new_user_registration_path%></button>
+  <div class="row ">
+    <div class=" col-md-offset-5 col-md-2 ">
+      <%= image_tag "placeholder.png"  %>
+    </div>
+    <div class=" col-md-offset-5 col-md-2 ">
+        <br/>
+          <button type="button" class="btn btn-primary"><%= link_to 'Log in', user_session_path%></button>
+
+          <button type="button" class="btn btn-primary"><%= link_to 'Sign Up', new_user_registration_path%></button>
     </div>
   </div>
 </div>
-<% end %>

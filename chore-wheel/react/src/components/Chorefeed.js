@@ -84,7 +84,12 @@ class Chorefeed extends Component {
 
     let toShow;
     if (this.state.showAssignForm){
-      toShow = <NewTask chores = { this.props.chores }/>
+      toShow =  <NewTask 
+                  chores= { this.props.chores } 
+                  user={this.props.user} 
+                  turnShowAssignFormOff= {this.turnShowAssignFormOff} 
+                  getTasksData={this.getTasksData} 
+                />
     } else {
       toShow = assignChoreButton;
     }
