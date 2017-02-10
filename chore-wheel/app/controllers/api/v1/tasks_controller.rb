@@ -7,7 +7,7 @@ class Api::V1::TasksController < ApplicationController
   end
 
   def create_task
-      puts "TASK"
+      # puts "TASK"
       @task = Task.new(task_params)
       @task.finish_by = Time.new(params[:task][:finish_by])
       # Need details to sent text message.
@@ -26,16 +26,16 @@ class Api::V1::TasksController < ApplicationController
       )
 
       to = @user.phone_number
-      to = '+1' + to
+      if !to.nil?
+        to = '+1' + to
+        text_body = "Hi #{@user.first_name}! Please finish #{@chore.title} by #{@task.finish_by} :)"
 
-      text_body = "Hi #{@user.first_name}! Please finish #{@chore.title} by #{@task.finish_by} :)"
-
-
-      client.messages.create(
-        to: to,
-        from: "+16172022161",
-        body: text_body
-      )
+        client.messages.create(
+          to: to,
+          from: "+16172022161",
+          body: text_body
+          )
+      end
 
       respond_to do |format|
 	      if @task.save
