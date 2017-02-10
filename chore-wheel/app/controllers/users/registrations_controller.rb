@@ -22,19 +22,19 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  def after_sign_up_path_for(resource)
-    @user = User.find(resource.id)
-    if @user.phone_number == nil
-      edit_user_registration_url(current_user)
-      # flash[:notice] = "Please Edit your Profile to add your phone number, all alerts and reminders will be sent to your phone!!"
-
-      # this route
-      # dashboard_index_url
-    else
-      # that route
-      super
-    end
-  end
+  # def after_sign_up_path_for(resource)
+  #   @user = User.find(resource.id)
+  #   if @user.phone_number == nil
+  #     edit_user_registration_url(current_user)
+  #     # flash[:notice] = "Please Edit your Profile to add your phone number, all alerts and reminders will be sent to your phone!!"
+  #
+  #     # this route
+  #     # dashboard_index_url
+  #   else
+  #     # that route
+  #     super
+  #   end
+  # end
 
   # DELETE /resource
   # def destroy
