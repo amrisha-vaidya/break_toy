@@ -47,17 +47,16 @@ class Api::V1::TasksController < ApplicationController
   end
 
   def complete_task
-      @task= Task.find(params[:id])
-      @task.update_attributes(task_params)
+    @task= Task.find(params[:id])
+    @task.update_attributes(task_params)
 
-      respond_to do |format|
-	      if @task.save
-	        format.json { render json: @task, status: :created }
-	      else
-	        format.json { render json: @task.errors, status: :unprocessable_entity }
-	      end
-    	end
-    end
+    respond_to do |format|
+      if @task.save
+        format.json { render json: @task, status: :created }
+      else
+        format.json { render json: @task.errors, status: :unprocessable_entity }
+      end
+  	end
   end
 
   private

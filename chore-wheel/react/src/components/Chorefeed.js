@@ -14,6 +14,7 @@ class Chorefeed extends Component {
     this.turnShowAssignFormOff = this.turnShowAssignFormOff.bind(this);
   }
 
+  // Retrieves all the task data for the user.
   getTasksData(user){
     let user_id = user ? user.id : null;
     fetch(`/api/v1/tasks/fetch_user_chores?users_id=` + user_id, {
