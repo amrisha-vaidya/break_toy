@@ -68,8 +68,10 @@ class Chorefeed extends Component {
           </span>
         </td>
         <td> </td>
+        <td> </td>
+
       </tr>
-    } 
+    }
 
     if (user){
       if (tasks) {
@@ -77,6 +79,7 @@ class Chorefeed extends Component {
           <tr key={i}>
           <td> { task.chore.title } </td>
           <td className='text-center'> {task.completed ? <strong><i className='fa fa-check'></i>&nbsp;Complete</strong> : 'Not Completed Yet'} </td>
+          <td className='text-muted text-right'> {task.completed ? '' : <i className="fa fa-check"></i>} </td>
           </tr>
         );
       }
@@ -84,11 +87,11 @@ class Chorefeed extends Component {
 
     let toShow;
     if (this.state.showAssignForm){
-      toShow =  <NewTask 
-                  chores= { this.props.chores } 
-                  user={this.props.user} 
-                  turnShowAssignFormOff= {this.turnShowAssignFormOff} 
-                  getTasksData={this.getTasksData} 
+      toShow =  <NewTask
+                  chores= { this.props.chores }
+                  user={this.props.user}
+                  turnShowAssignFormOff= {this.turnShowAssignFormOff}
+                  getTasksData={this.getTasksData}
                 />
     } else {
       toShow = assignChoreButton;
