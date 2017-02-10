@@ -20,22 +20,22 @@ class Api::V1::TasksController < ApplicationController
       @task.created_at = Time.now
       @task.updated_at = Time.now
 
-      # client = Twilio::REST::Client.new(
-      #   ENV["TWILIO_ACCOUNT_SID"],
-      #   ENV["TWILIO_AUTH_TOKEN"]
-      # )
+      client = Twilio::REST::Client.new(
+        ENV["TWILIO_ACCOUNT_SID"],
+        ENV["TWILIO_AUTH_TOKEN"]
+      )
 
-      # to = @user.phone_number
-      # to = '+1' + to
+      to = @user.phone_number
+      to = '+1' + to
 
-      # text_body = "Hi #{@user.first_name}! Please finish #{@chore.title} by #{@task.finish_by} :)"
+      text_body = "Hi #{@user.first_name}! Please finish #{@chore.title} by #{@task.finish_by} :)"
 
 
-      # client.messages.create(
-      #   to: to,
-      #   from: "+16172022161",
-      #   body: text_body
-      # )
+      client.messages.create(
+        to: to,
+        from: "+16172022161",
+        body: text_body
+      )
 
       respond_to do |format|
 	      if @task.save
