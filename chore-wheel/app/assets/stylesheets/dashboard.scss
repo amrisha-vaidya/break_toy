@@ -81,6 +81,11 @@
   color: #0099cc;
 }
 
+.btn-default.outline {
+  border: 2px solid white;
+  color: white;
+}
+
 .btn-primary.outline:hover, .btn-primary.outline:focus,
 .btn-primary.outline:active, .btn-primary.outline.active, .open >
 .dropdown-toggle.btn-primary {
@@ -91,4 +96,22 @@
   border-color: #007299;
   color: #007299;
   box-shadow: none;
+}
+
+.cutsom-panel-opacity{
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+}
+
+.panel-transparent {
+    background: none;
+    border: none;
+}
+
+.panel-transparent .panel-heading{
+    background: rgba(122, 130, 136, 0.2)!important;
+}
+
+.panel-transparent .panel-body{
+    background: rgba(46, 51, 56, 0.2)!important;
 }
