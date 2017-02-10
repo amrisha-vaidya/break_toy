@@ -14,22 +14,29 @@ class NewTask extends Component {
 
   createTask(taskDetails){
     let that = this;
+    // Need to add headers - compulsion.
     let headers = {
        'Content-Type':'application/json',
         'Access-Control-Origin': '*'
     }
+
+    // set the task properties to be sent.
     let data = taskDetails;
+
+    // send a POST request to create_task action.
     fetch(`/api/v1/tasks/create_task`, {
         method: "POST",
         headers: headers,
         body:  JSON.stringify(data)
     })
-    .then(function(response){ 
-        return response.json(); 
+    .then(function(response){
+        return response.json();
     })
-    .then(function(data){ 
+    .then(function(data){
         console.log(data);
+        // turn off boolean to hide assign form.
         that.props.turnShowAssignFormOff();
+        // call the getTasksData method passed in Chore Feed component
         that.props.getTasksData(that.props.user);
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -40,19 +47,24 @@ class NewTask extends Component {
   }
 
   handleSubmit(event) {
-    let that = this;
+    let that = this; // to preserve scope.
+    event.preventDefault();
+
+    // Prepare data/properties for new task
     let newTaskDetails = {
       chores_id: this.state.value,
       users_id: this.props.user.id
-    }
+    };
 
-    event.preventDefault();
+    // Open confirmation dialog w/ completion data.
     bootbox.prompt({
       title: "When should this be completed by?",
       inputType: 'date',
       callback: function (result) {
+        // if user has actually entered data.
         if (result && result.length){
           newTaskDetails.finish_by = result;
+          // call function to create a task and pass task properties to it.
           that.createTask(newTaskDetails);
         }
       }
@@ -69,6 +81,7 @@ class NewTask extends Component {
       choreOptions.unshift([<option key='0' value='' disabled='disabled'> Select a chore to assign </option>]);
 		}
 
+    // On clickin choosing add task, fire handleSubmit action.
   	return (
   		<tr>
         <td>
