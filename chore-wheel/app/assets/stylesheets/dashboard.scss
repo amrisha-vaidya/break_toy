@@ -2,62 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.signup-panel{
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  padding: 15px;
-  margin-top: 30px;
-  i{
-    font-size: 30px;
-    line-height: 50px;
-    color: #999;
-  }
-  form{
-    span{
-      height: 50px;
-    }
-  }
-}
-
-.welcome{
-  font-size: 26px;
-  text-align: center;
-  // margin-left: 0;
-}
-
-.actions{
-  margin-left: 45%;
-}
-
-.login-panel{
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  padding: 15px;
-  margin-top: 30px;
-  i{
-    font-size: 30px;
-    line-height: 50px;
-    color: #999;
-  }
-  form{
-    span{
-      height: 50px;
-    }
-  }
-}
-
-.log_in{
-  font-size: 26px;
-  margin-left: 23%;
-}
-.login_actions{
-  margin-left: 40%;
-}
-
-.shared_links{
-  margin-left: 40%;
-}
-
 #avatar-navbar{
   height: 2vw;
   width:2vw;
