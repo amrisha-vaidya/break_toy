@@ -37,7 +37,6 @@ class GeneralWheel extends Component {
 
   initializeChart(user){
   	let tasks = user.tasks;
-
   	let totalTasks = tasks.length;
   	let completeTasks = [];
   	let incompleteTasks =[];

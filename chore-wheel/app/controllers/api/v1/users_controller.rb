@@ -3,7 +3,7 @@ class Api::V1::UsersController < ApplicationController
 
   def fetch_users
     @users = User.all
-    render json: @users, include: ["tasks"]
+    render json: @users.to_json(include:{tasks:{include: :chore}}), status: :ok
   end
 
 

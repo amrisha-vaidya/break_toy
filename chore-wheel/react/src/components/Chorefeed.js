@@ -9,37 +9,14 @@ class Chorefeed extends Component {
       showAssignForm: false
     };
 
-    this.getTasksData = this.getTasksData.bind(this);
     this.turnShowAssignFormOn = this.turnShowAssignFormOn.bind(this);
     this.turnShowAssignFormOff = this.turnShowAssignFormOff.bind(this);
   }
 
-  // Retrieves all the task data for the user.
-  getTasksData(user){
-    let user_id = user ? user.id : null;
-    fetch(`/api/v1/tasks/fetch_user_chores?users_id=` + user_id, {
-      credentials: 'same-origin'
-    })
-    .then(response => {
-      if(response.ok) {
-        return response;
-      } else {
-        let errorMessage = `${response.status}, (${response.statusText})`;
-        let error = newError(errorMessage);
-        throw(error);
-      }
-    })
-    .then(response => response.json())
-    .then(body => {
-      let tasks = body;
-      this.setState({ tasks: tasks });
-    })
-    .catch(error => console.error(`Error in fetch: ${error.message}`));
-  }
-
   componentWillReceiveProps(nextProps) {
     if(JSON.stringify(nextProps) != JSON.stringify(this.props)){
-      this.getTasksData(nextProps.user);
+      let tasks = nextProps.user ?  nextProps.user.tasks : [];
+      this.setState({ tasks: tasks });
     }
   }
 
@@ -92,7 +69,6 @@ class Chorefeed extends Component {
                   chores= { this.props.chores }
                   user={this.props.user}
                   turnShowAssignFormOff= {this.turnShowAssignFormOff}
-                  getTasksData={this.getTasksData}
                 />
     } else {
       toShow = assignChoreButton;

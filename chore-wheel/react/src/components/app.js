@@ -31,7 +31,10 @@ class App extends Component {
       let newUsers = body;
       this.setState({ users: newUsers });
     })
-    .catch(error => console.error(`Error in fetch: ${error.message}`));
+    .catch(error => {
+          console.error(`Error in fetch: ${error.message}`)
+        }
+      );
   }
 
   componentWillMount() {

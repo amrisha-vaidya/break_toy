@@ -35,7 +35,10 @@ class Uppercomponent extends Component {
       let newChores = body;
       this.setState({ chores: newChores});
     })
-    .catch(error => console.error(`Error in fetch: ${error.message}`));
+    .catch(error => {
+          console.error(`Error in fetch: ${error.message}`)
+        }
+      );
   }
 
   setFeedUser(user){

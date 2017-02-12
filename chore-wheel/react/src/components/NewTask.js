@@ -35,9 +35,9 @@ class NewTask extends Component {
     .then(function(data){
         console.log(data);
         // turn off boolean to hide assign form.
+        // debugger
+        that.props.user.tasks.push(data)
         that.props.turnShowAssignFormOff();
-        // call the getTasksData method passed in Chore Feed component
-        that.props.getTasksData(that.props.user);
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
