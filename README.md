@@ -9,7 +9,12 @@ It started with the idea to allow roommates/apartment-mates/housemates to schedu
 notification when they have been assigned a chore. This is an application in progress and still requires future features
 to be completed.
 
-Technologies used: -Ruby on Rails -React -PostgreSQL -ActiveRecord -Bootstrap & css
+Technologies used: 
+-Ruby on Rails 
+-React 
+-PostgreSQL 
+-ActiveRecord 
+-Bootstrap & css
 
 View Demo: https://chorestore.herokuapp.com/
 
