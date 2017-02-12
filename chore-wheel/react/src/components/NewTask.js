@@ -9,6 +9,7 @@ class NewTask extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.cancelSubmit = this.cancelSubmit.bind(this);
     this.createTask = this.createTask.bind(this);
   }
 
@@ -33,17 +34,19 @@ class NewTask extends Component {
         return response.json();
     })
     .then(function(data){
-        console.log(data);
-        // turn off boolean to hide assign form.
-        // debugger
         that.props.user.tasks.push(data)
         that.props.turnShowAssignFormOff();
+        that.props.updateAll();
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   handleChange(event) {
     this.setState({value: event.target.value});
+  }
+
+  cancelSubmit(event) {
+    this.props.turnShowAssignFormOff();
   }
 
   handleSubmit(event) {
@@ -91,7 +94,8 @@ class NewTask extends Component {
 			          </select>
 			      </form>
         </td>
-        <td><input type="submit" value="Assign" className="btn btn-primary" onClick={this.handleSubmit} /> </td>
+        <td className="text-right"><input type="submit" value="Assign" className="btn btn-primary" onClick={
+          this.handleSubmit} /> <input type="submit" value="Cancel" className="btn btn-default" onClick={this.cancelSubmit} /> </td>
       </tr>
 		)
   }

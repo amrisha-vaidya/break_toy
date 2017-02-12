@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Doughnut} from 'react-chartjs-2';
 
-class GeneralWheel extends Component {
+class UserWheel extends Component {
   constructor(props) {
     super(props)
     let backgroundColors = ['#21E08A'];
@@ -18,7 +18,20 @@ class GeneralWheel extends Component {
 			chartOptions:{
 				legend:{
 					onClick: this.clickHandler
-				}
+				},
+        tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+              var dataset = data.datasets[tooltipItem.datasetIndex];
+              var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                return previousValue + currentValue;
+              });
+              var currentValue = dataset.data[tooltipItem.index];
+              var precentage = Math.floor(((currentValue/total) * 100)+0.5);         
+              return precentage + "%";
+            }
+          }
+        }
 			}
     }
     this.initializeChart = this.initializeChart.bind(this);
@@ -93,4 +106,4 @@ class GeneralWheel extends Component {
   }
 }
 
-export default GeneralWheel;
+export default UserWheel;

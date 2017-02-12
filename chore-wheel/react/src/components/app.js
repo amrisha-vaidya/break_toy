@@ -53,13 +53,17 @@ class App extends Component {
           <div className='col-lg-12 large-centered columns'>
             < Uppercomponent
                 users = { this.state.users } 
-                updateChoreTrigger = { this.state.trigger }
+                updateAll= { this.updateAll }
+                trigger = { this.state.trigger }
               />
           </div>
         </div>
         <div className='row '>
           <div className='col-lg-12 large-centered columns'>
-            < Lowercomponent updateAll= { this.updateAll } />
+            < Lowercomponent 
+              updateAll= { this.updateAll } 
+              trigger = { this.state.trigger }
+            />
           </div>
         </div>
 

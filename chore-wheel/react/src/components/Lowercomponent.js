@@ -63,7 +63,6 @@ class Lowercomponent extends Component {
         return response.json(); 
     })
     .then(function(data){ 
-        console.log(data);
         that.props.updateAll();
 
     })

@@ -30,8 +30,13 @@
 
 .text-muted :hover{
   color: #00a7e1;
-  cursor: pointer
+  cursor: pointer;
 }
+
+
+.muted-check :hover{
+  color: #21E08A;
+} 
 
 .scroll-div{
   height: 400px;
@@ -69,9 +74,14 @@
   padding: 12px 22px;
 }
 
-.btn-primary.outline {
+.btn-primary.outline-transparent {
   border: 2px solid #FFFFFF;
   color: #FFFFFF;
+}
+
+.btn-primary.outline {
+  border: 2px solid #0099cc;
+  color: #0099cc;
 }
 
 .btn-default.outline {

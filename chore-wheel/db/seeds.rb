@@ -34,10 +34,43 @@ Chore.create(
 	updated_at: Time.now
 )
 
+Chore.create(
+	title: "Clean back porch",
+	description: "It needs to be dusted",
+	created_at: Time.now,
+	updated_at: Time.now
+)
+
+Chore.create(
+	title: "Shovel footpath",
+	description: "Every other day",
+	created_at: Time.now,
+	updated_at: Time.now
+)
+
+Chore.create(
+	title: "Shovel Driveway",
+	description: "Every other day",
+	created_at: Time.now,
+	updated_at: Time.now
+)
+
+Chore.create(
+	title: "Break Recyclable boxes",
+	description: "Every Sunday",
+	created_at: Time.now,
+	updated_at: Time.now
+)
+
+Chore.create(
+	title: "Clean Fridge",
+	description: "Every other Monday",
+	created_at: Time.now,
+	updated_at: Time.now
+)
+
 User.create :first_name => "John", :last_name => "Smith", :email => "user1@example.com", :password => "user123", :phone_number => "717-344-7575"
-
 User.create :first_name => "Mary", :last_name => "Anne", :email => "user2@example.com", :password => "user123", :phone_number => "336-692-6843"
-
 User.create :first_name => "Sue", :last_name => "Patterson", :email => "user3@example.com", :password => "user123", :phone_number => "717-344-7575"
 
 Task.create(
@@ -70,4 +103,67 @@ Task.create(
 	chores_id: 4,
 	created_at: Time.now,
 	updated_at: Time.now
+)
+
+Task.create(
+	finish_by: Time.now + 1.day,
+	users_id: 1,
+	chores_id: 3,
+	created_at: Time.now,
+	updated_at: Time.now,
+	completed: true
+)
+
+Task.create(
+	finish_by: Time.now + 1.day,
+	users_id: 2,
+	chores_id: 6,
+	created_at: Time.now,
+	updated_at: Time.now,
+	completed: true
+)
+
+Task.create(
+	finish_by: Time.now + 1.day,
+	users_id: 1,
+	chores_id: 6,
+	created_at: Time.now,
+	updated_at: Time.now,
+	completed: true
+)
+
+Task.create(
+	finish_by: Time.now + 1.day,
+	users_id: 3,
+	chores_id: 5,
+	created_at: Time.now,
+	updated_at: Time.now,
+	completed: true
+)
+
+Task.create(
+	finish_by: Time.now + 1.day,
+	users_id: 3,
+	chores_id: 7,
+	created_at: Time.now,
+	updated_at: Time.now,
+	completed: true
+)
+
+Task.create(
+	finish_by: Time.now + 1.day,
+	users_id: 3,
+	chores_id: 8,
+	created_at: Time.now,
+	updated_at: Time.now,
+	completed: true
+)
+
+Task.create(
+	finish_by: Time.now + 1.day,
+	users_id: 1,
+	chores_id: 7,
+	created_at: Time.now,
+	updated_at: Time.now,
+	completed: true
 )

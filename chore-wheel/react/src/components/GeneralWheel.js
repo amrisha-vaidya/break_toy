@@ -4,14 +4,14 @@ import {Doughnut} from 'react-chartjs-2';
 class GeneralWheel extends Component {
   constructor(props) {
     super(props)
-    let backgroundColors = ['#FF6384','#36A2EB','#FFCE56'];
-    let hoverBackgroundColors= ['#FF6384','#36A2EB','#FFCE56'];
+    let backgroundColors = ['#FF6384','#36A2EB','#FFCE56','#D35400', '#9B59B6', '#C70039', '#E51400', '#647687', '#6A00FF'];
+    let hoverBackgroundColors= ['#FF6384','#36A2EB','#FFCE56', '#D35400', '#9B59B6','#C70039', '#E51400','#647687','#6A00FF'];
 
     this.clickHandler = this.clickHandler.bind(this);
 
     this.state = {
-  		backgroundColors: ['#FF6384','#36A2EB','#FFCE56'],
-  		hoverBackgroundColors: ['#FF6384','#36A2EB','#FFCE56'],
+      backgroundColors: ['#FF6384','#36A2EB','#FFCE56','#D35400', '#9B59B6', '#C70039', '#E51400', '#647687','#6A00FF'],
+      hoverBackgroundColors: ['#FF6384','#36A2EB','#FFCE56','#D35400', '#9B59B6', '#C70039', '#E51400', '#647687','#6A00FF'],
 
     	chartData: {
 			},
@@ -19,7 +19,20 @@ class GeneralWheel extends Component {
 			chartOptions:{
 				legend:{
 					onClick: this.clickHandler
-				}
+				},
+        tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+              var dataset = data.datasets[tooltipItem.datasetIndex];
+              var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                return previousValue + currentValue;
+              });
+              var currentValue = dataset.data[tooltipItem.index];
+              var precentage = Math.floor(((currentValue/total) * 100)+0.5);
+              return precentage + "%";
+            }
+          }
+        }
 			}
     }
   }
@@ -45,7 +58,7 @@ class GeneralWheel extends Component {
 					data: degrees,
 					backgroundColor: this.state.backgroundColors,
 					hoverBackgroundColor: this.state.hoverBackgroundColors
-					
+
 				}]
 
     	}

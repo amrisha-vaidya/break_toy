@@ -65,16 +65,20 @@ class Uppercomponent extends Component {
     let displayWheel;
 
     if (this.state.feedUser){
-      displayWheel = <UserWheel setFeedUser={ this.setFeedUser } user= { this.state.feedUser }/>
+      displayWheel = <UserWheel setFeedUser={ this.setFeedUser } user= { this.state.feedUser } trigger = { this.props.trigger } />
     } else {
-      displayWheel = <GeneralWheel setFeedUser={ this.setFeedUser } users= { this.props.users }/>
+      displayWheel = <GeneralWheel setFeedUser={ this.setFeedUser } users= { this.props.users } trigger = { this.props.trigger }/>
     }
 
     return(
       <div className ='row'>
         <div className='col-lg-4 col-md-4 text-center'>
           {/*<h3> user Component</h3>*/}
-          <UsersPanel setFeedUser={ this.setFeedUser } users= { this.props.users }/>
+          <UsersPanel 
+            setFeedUser={ this.setFeedUser } 
+            users= { this.props.users }
+            trigger = { this.props.trigger }
+          />
         </div>
 
         <div className='col-lg-4 col-md-4 text-center'>
@@ -85,6 +89,8 @@ class Uppercomponent extends Component {
           <Chorefeed
             user = {this.state.feedUser}
             chores = { this.state.chores } 
+            updateAll = { this.props.updateAll }
+            trigger = { this.props.trigger }
           />
         </div>
       </div>

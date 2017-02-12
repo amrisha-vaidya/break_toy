@@ -11,6 +11,41 @@ class Chorefeed extends Component {
 
     this.turnShowAssignFormOn = this.turnShowAssignFormOn.bind(this);
     this.turnShowAssignFormOff = this.turnShowAssignFormOff.bind(this);
+    this.completeTask = this.completeTask.bind(this);
+  }
+
+  // completeTask(task){
+  //   task.completed = true;
+  //   this.props.updateAll();
+
+  // }
+
+  completeTask(task){
+    let that = this;
+    task.completed = true;
+    // Need to add headers - compulsion.
+    let headers = {
+       'Content-Type':'application/json',
+        'Access-Control-Origin': '*'
+    }
+
+    // set the task properties to be sent.
+    let data = task;
+
+    // send a POST request to create_task action.
+    fetch(`/api/v1/tasks/complete_task`, {
+        method: "PUT",
+        headers: headers,
+        body:  JSON.stringify(data)
+    })
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(data){
+        // turn off boolean to hide assign form.
+        that.props.updateAll();
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   componentWillReceiveProps(nextProps) {
@@ -31,6 +66,7 @@ class Chorefeed extends Component {
   }
 
   render(){
+    let that = this;
     let choreFeed;
     let user = this.props.user;
     let first_name = user ? user.first_name : null;
@@ -57,7 +93,7 @@ class Chorefeed extends Component {
           <tr key={i}>
           <td> { task.chore.title } </td>
           <td className='text-center'> {task.completed ? <strong><i className='fa fa-check'></i>&nbsp;Complete</strong> : 'Not Completed Yet'} </td>
-          <td className='text-muted text-right'> {task.completed ? '' : <i className="fa fa-check"></i>} </td>
+          <td className='text-muted text-right muted-check'> {task.completed ? '' : <i className="fa fa-check" onClick= {()=>this.completeTask(task)}></i>} </td>
           </tr>
         );
       }
@@ -69,6 +105,7 @@ class Chorefeed extends Component {
                   chores= { this.props.chores }
                   user={this.props.user}
                   turnShowAssignFormOff= {this.turnShowAssignFormOff}
+                  updateAll= { this.props.updateAll } 
                 />
     } else {
       toShow = assignChoreButton;
