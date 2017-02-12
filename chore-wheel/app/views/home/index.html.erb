@@ -1,17 +1,18 @@
 
-<div id="landing" >
-  <div class="row ">
-    <div class="col-md-offset-4 col-md-4">
-        <br />
-        <br />
-        <br />
-        <div class= "panel panel-default panel-transparent">
-          <div class="panel-body text-center">
-            <button type="button" class="btn btn-default btn-lg outline"><%= link_to 'Log in', user_session_path, class: "text-white" %></button>
 
-            <button type="button" class="btn btn-default btn-lg outline"><%= link_to 'Sign Up', new_user_registration_path, class: "text-white" %></button>
-          </div>
-        </div>
+<div class="landing">
+  <div class="hero">
+    <div class="hero-overlay">
+      <div class="logo">
+        <!-- <h2>THERE WILL BE A LOGO<h2> -->
+      </div>
+
+      <div class="hero-content">
+        <h1>ChoreStore</h1>
+        <p>The app that makes it easy to schedule and assign chores </p>
+        <%= link_to "Login", new_user_session_path, class: "login-link" %>
+        <%= link_to "Sign Up", new_user_registration_path, class: "signup-link primary" %>
+      </div>
     </div>
   </div>
 </div>

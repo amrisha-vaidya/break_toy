@@ -51,20 +51,13 @@
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 80px;
+  height: 50px;
   text-align: center;
   opacity: 5;
 }
 
 .container{
   width: 100%;
-}
-
-.icon-border-custom{
-  display: inline-block;
-  border-radius: 60px;
-  box-shadow: 0px 0px 3px #888;
-  color: blue;
 }
 
 .small-text{
@@ -77,8 +70,8 @@
 }
 
 .btn-primary.outline {
-  border: 2px solid #0099cc;
-  color: #0099cc;
+  border: 2px solid #FFFFFF;
+  color: #FFFFFF;
 }
 
 .btn-default.outline {
@@ -114,4 +107,102 @@
 
 .panel-transparent .panel-body{
     background: rgba(46, 51, 56, 0.2)!important;
+}
+
+.hero {
+  background: url("landingpage.jpg");
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.hero-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+  text-align: center;
+  position: absolute;
+  top: 40%;
+  left: 0;
+  right: 0;
+  -webkit-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+}
+
+.logo {
+  text-align: center;
+}
+
+.hero-content h1 {
+  color: white;
+  margin: 0
+}
+
+.hero-content p {
+  color: white;
+  margin: 0;
+}
+
+.login-link, .signup-link {
+  display: inline-block;
+  padding: 10px;
+  color: white;
+  width: 200px;
+  border: 0;
+  border-radius: 3px;
+}
+
+.login-link {
+  background-color: #428bca;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.signup-link {
+  background-color: #428bca;
+  font-weight: bold;
+}
+
+.login-link:hover {
+  background-color: #5496cf;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.signup-link:hover {
+  background-color: #5496cf;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.hero-content-white {
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+  width: 320px;
+  margin: 0 auto;
+}
+
+.panel-transparent {
+  background: none;
+}
+
+.panel-transparent .panel-heading{
+  background: rgba(122, 130, 136, 0.2) !important;
+}
+
+.panel-transparent .panel-body{
+  background: rgba(46, 51, 56, 0.2) !important;
+}
+
+.transparent-input{
+  background-color: rgba(0,0,0,0) !important;
 }

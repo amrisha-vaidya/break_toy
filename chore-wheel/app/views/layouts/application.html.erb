@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>ChoreWheel</title>
+    <title>ChoreStore</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag 'application', media: 'all' %>
@@ -17,9 +17,7 @@
   <body>
     <%= render 'shared/navigation' if user_signed_in?%>
     <%= yield %>
-    <div id="footer">
-     <%= render 'layouts/footer' %>
-    </div>
+    <%= render 'layouts/footer' %>
 </body>
   </body>
 </html>

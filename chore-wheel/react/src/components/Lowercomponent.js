@@ -59,10 +59,10 @@ class Lowercomponent extends Component {
         headers: headers,
         body:  JSON.stringify(data)
     })
-    .then(function(response){ 
-        return response.json(); 
+    .then(function(response){
+        return response.json();
     })
-    .then(function(data){ 
+    .then(function(data){
         console.log(data);
         that.props.updateAll();
 
@@ -76,6 +76,7 @@ class Lowercomponent extends Component {
         <div>
         <div className="center">
           <button data-toggle="modal" data-target="#add_chore_modal" className="btn btn-primary btn-lg outline center-block"><i className="fa fa-plus"></i>&nbsp;Add a chore</button>
+          <br />
         </div>
 
 
